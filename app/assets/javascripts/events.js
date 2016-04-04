@@ -13,9 +13,9 @@
     var event = $resource("/events/:id.json", {}, {
       update: {method: "PUT"}
       vm.data = Event.query();
-      vm.sort_data_by = function(name){
-        vm.sort_on = name;
-        vm.is_descending =!(vm.is_descending); 
+      vm.sort_data_by = function(title){
+        vm.sort_on = title;
+        vm.is_descending =!(vm.is_descending);
       });
     })
   });
