@@ -2,11 +2,26 @@
 <html>
 <head>
   <title>ICareVolunteerProject</title>
+  <link rel="stylesheet" href="../../app/assets/stylesheets/application.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav id="top-menu-nav" class="navbar navbar-right navbar-fixed-top">
+    <div class="container">
+      <ul id="top-menu" class="nav">
+        <li id="nav-storyes">
+          <a href="#">STORIES</a>
+        </li>
+        <li id="nav-search">
+          <a href="#">SEARCH</a>
+        </li>
+        <li id="nav-home">
+          <a href="#">HOME</a>
+        </li>
+      </div>
+    </nav>
 
 <%= yield %>
 
