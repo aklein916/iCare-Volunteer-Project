@@ -20,6 +20,6 @@ class EventsController < ApplicationController
 
   private
   def event_params
-    params.require(:grumble).permit(:title, :organizer, :focus_area, :description, :start_date, :end_date, :start_time, :end_time, :address, :created_at, :updated_at)
+    params.require(:event).permit(:title, :organizer, :focus_area, :description, :start_date, :end_date, :start_time, :end_time, :address, :created_at, :updated_at)
   end
 end
