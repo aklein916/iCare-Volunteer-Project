@@ -1,22 +1,17 @@
-
-<!-- <!DOCTYPE html>
-<html>
-  <head>
+<head>
     <title>Events</title>
-    <link rel="stylesheet" href="../../app/assets/stylesheets/application.css">
+    <link rel="stylesheet" href="app/assets/stylesheets/application.css">
+
     <script src="angular.js"></script>
     <script src="data.js"></script>
     <script src="application.js"></script>
   </head>
-  <body class="container" data-ng-app="icare">
+
     <%= stylesheet_link_tag "application", property: "stylesheet" %>
-    <%= javascript_include_tag "" -->
-
-<div class="container" data-ng-app="icare">
-  <header class="jumbotron">
-    <h1>iCare</h1>
+    <%= javascript_include_tag "events" %>
   </header>
-
+  <div class="container" data-ng-app="icare">
+    <h1>iCare</h1>
   <main data-ng-controller="event_controller as vm">
     <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
     <table class="table table-striped">
