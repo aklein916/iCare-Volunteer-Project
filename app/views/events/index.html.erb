@@ -1,1 +1,43 @@
+<div class="container" data-ng-app="icare">
+  <header class="jumbotron">
+    <h1>iCare</h1>
+  </header>
 
+  <main data-ng-controller="event_controller as vm">
+    <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td data-ng-click="vm.is_descending = !(vm.is_descending)">
+            <span data-ng-if="vm.is_descending">z-a</span>
+            <span data-ng-if="!vm.is_descending">a-z</span>
+          </td>
+          <th data-ng-click="vm.sort_data_by('title')">Title</th>
+          <th data-ng-click="vm.sort_data_by('organizer')">Organizer</th>
+          <th data-ng-click="vm.sort_data_by('focus_area')">Category</th>
+          <th data-ng-click="vm.sort_data_by('start_date')">Start Date</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr data-ng-repeat="event in vm.data | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
+          <td>{{$index + 1}}</td>
+          <td colspan="2">
+            <input type="text" data-ng-model="vm.new_product.title" placeholder="Name" />
+          </td>
+          <td>
+            <input type="text" data-ng-model="vm.new_product.organizer" placeholder="Organizer" />
+          </td>
+          <td>
+            <input type="text" data-ng-model="vm.new_product.category" placeholder="Category" />
+          </td>
+          <td>
+            <input type="date" data-ng-model="vm.new_product.country" placeholder="mm/dd/yyyy" />
+          </td>
+          <td>
+          <!-- <td data-ng-click="vm.create()">&plus;</td> -->
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</div>
