@@ -3,7 +3,7 @@ class EventsController < ApplicationController
     @events = Event.all
     render status: 200, json: @events
   end
-  # 
+
   # def show
   #   @event = Event.find(params[:id])
   #   render status: 200, json: @events
