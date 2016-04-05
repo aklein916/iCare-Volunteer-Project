@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
+    <tr data-ng-repeat="event in vm.event | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
       <td>{{$index + 1}}</td>
       <td colspan="2">
         <input type="text" data-ng-model="event.title" placeholder="Name" />
