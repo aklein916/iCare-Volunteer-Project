@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-data= JSON.parse(File.read("db/stories_data.json", "db/events_data.json"))
+data= JSON.parse(File.read("db/stories_data.json")) data=JSON.parse(File.read("db/events_data.json"))
 Event.destroy_all
 Event.create!(data)
 Story.destroy_all
