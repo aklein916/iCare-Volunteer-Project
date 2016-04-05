@@ -13,7 +13,12 @@
     "$stateProvider",
     RouterFunction
   ]);
+  .factory("Story", [
+    "$resource",
+    storyFactoryFunction
+  ])
   .controller("indexCtrl", [
+    "Story",
     indexCtrlFunction
   ]);
 
@@ -29,9 +34,15 @@
       url: "/:id"
     });
   }
-  function indexCtrlFunction(){
+  function storyFactoryFunction($resource){
+    var Story = $resource("/stories/:id/json", {}, {
+      update: {method: "PUT"}
+    });
+    Story.all = Story.query();
+    return Story;
+    function indexCtrlFunction(Story){
     var indexVM = this;
-    indexVM.foo ='bar';
+    indexVM.stories = Story.all;
   }
 })();
 // (function(){
