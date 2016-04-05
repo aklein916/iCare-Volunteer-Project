@@ -9,13 +9,13 @@
     "ui.router",
     "ngResource"
   ])
-  .config([
-    "$stateProvider",
-    RouterFunction
-  ])
   .factory("EventFactory", [
     "$resource",
     EventFactoryFunction
+  ])
+  .config([
+    "$stateProvider",
+    RouterFunction
   ])
   .controller("index_controller", [
     "EventFactory",
@@ -38,13 +38,13 @@
       url: "/",
       templateUrl: "ng-view/event.index.html",
       controller: "index_controller",
-      controllerAs: "vm"
+      controllerAs: "IndexVM"
     })
     .state("show",{
       url: "/:id",
       templateUrl: "ng-view/event.show.html",
       controller: "show_controller",
-      controllerAs: "vm"
+      controllerAs: "ShowVM"
     });
   }
 
@@ -78,7 +78,7 @@
 
   function EventFormDirectiveFunction(EventFactory, $state){
     return{
-      templateUrl: "ng-views/event.form.html",
+      templateUrl: "ng-view/event.form.html",
       scope: {
         event:  "=",
         formMethod:   "@"

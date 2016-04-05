@@ -1,17 +1,16 @@
-<%= stylesheet_link_tag "stories", property: "stylesheet" %>
 <%= javascript_include_tag "stories" %>
 <div class="container" data-ng-app="icare">
     <header class="jumbotron">
       <h1>Stories</h1>
     </header>
     <main data-ng-controller="icare_controller as vm">
-      <h2>{{vm.name}}</h2>
+      <h2><a data ng-ui-sref="{{vm.name}}"></a></h2>
           <div data-ng-repeat="story in vm.data">
-              <h1>{{story.name}}</h1>
-              <h2>{{story.age}}</h2>
-              <h2>{{story.cause}}</h2>
+              <h1><a data-ui-sref="{{story.name}"}></a></h1>
+              <h2><a data-ui-sref="{{story.age}}"></a></h2>
+              <h2><a data-ui-sref="{{story.cause}}"></a></h2>
               <img data-ng-src="{{story.photo_url}}" alt="#" />
-              <p>{{story.description}}</p>
+              <p><a data-ui-sref="{{story.description}}"></a></p>
           </div>
           <footer class="foot">
             <a data-ui-sref="vm.create()">Tell Us What Inspires You!</a>
