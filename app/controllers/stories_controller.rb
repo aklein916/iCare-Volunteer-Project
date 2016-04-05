@@ -1,13 +1,16 @@
 class StoriesController < ApplicationController
   def index
     @stories = Story.all
-    render status: 200, json: @stories
+    respond_to do |format|
+      format.html
+      format.json{render status: 200, json: @stories }
+    end
   end
-
-  def show
-    @story = Story.find(params[:id])
-    render status: 200, json: @stories
-  end
+  #
+  # def show
+  #   @story = Story.find(params[:id])
+  #   render status: 200, json: @stories
+  # end
 
   def create
     @story = Story.new(story_params)
@@ -21,7 +24,7 @@ class StoriesController < ApplicationController
 
   private
   def story_params
-    params.require(:story).permit(:name, :age, :cause, :photo_url, :story, :created_at, :updated_at)
+    params.require(:story).permit(:name, :age, :cause, :photo_url, :created_at, :updated_at)
   end
 
 end

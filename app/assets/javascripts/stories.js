@@ -1,6 +1,6 @@
 //= require angular
 //= require angular-resource
-
+//= require angular-ui-router
 "use strict";
 
 (function(){
@@ -13,57 +13,60 @@
     "$stateProvider",
     RouterFunction
   ]);
-  .factory("Story", [
+  .factory("StoryFactory", [
     "$resource",
-    storyFactoryFunction
+    StoryFactoryFunction
   ])
-  .controller("indexCtrl", [
+  .controller("index_controller", [
     "Story",
-    indexCtrlFunction
+    IndexControllerFunction
   ]);
-  .controller("showCtrl", [
-    "Story",
+  .controller("show_controller", [
+    "StoryFactory",
     "$stateParams",
     ShowControllerFunction
   ])
 
   .directive("storyForm", [
-    "Story",
-    storyFormFunction
+    "StoryFactory",
+    "$state",
+    StoryFormDirectiveFunction
   ]);
 
   function RouterFunction($stateProvider){
     $stateProvider
     .state("index", {
-      url: "/",
-      templateUrl: "ng-views/story.index.html"
-      controller: "indexCtrl",
-      controllerAs: "indexVM"
+      url: "/stories",
+      templateUrl: "ng-view/story.index.html"
+      controller: "index_controller",
+      controllerAs: "IndexVM"
     })
     .state("show", {
-      url: "/:id",
-      templateUrl: "ng-views/story.show.html",
-      controller: "showCtrl",
-      controllerAs: "showVM"
+      url: "/stories/:id",
+      templateUrl: "ng-view/story.show.html",
+      controller: "show_controller",
+      controllerAs: "ShowVM"
     });
   }
-  function storyFactoryFunction($resource){
-    var Story = $resource("/stories/:id/json", {}, {
+  function StoryFactoryFunction($resource){
+    var vm = this;
+    var story = $resource("/stories/:id/json", {}, {
       update: {method: "PUT"}
     });
-    Story.all = Story.query();
+    vm.data = story.query();
     return Story;
 
-    function indexCtrlFunction(Story){
+    function IndexControllerFunction(StoryFactory, $stateParams){
     var indexVM = this;
-    indexVM.stories = Story.all;
-    indexVM.newStory = new Story();
+    indexVM.stories = StoryFactory.query();
+    indexVM.newStory = new StoryFactory();
   }
 
-  function showCtrlFunction(Story, $stateParams){
+  function ShowControllerFunction(StoryFactory, $stateParams){
     var showVM = this;
-    Story.all.$promise.then(function(){
-      Story.all.forReach(function(story){
+    showVM.story = StoryFactory.get({id:$stateParams.id})
+    StoryFactory.all.$promise.then(function(){
+      StoryFactory.all.forEach(function(story){
         if(story.id == $stateParams.id){
           showVM.story == story;
         }
@@ -71,16 +74,17 @@
     });
   }
 
-  function storyFormFunction(Story){
+  function StoryFormDirectiveFunction(StoryFactory, $state){
     return{
-      templateUrl: "ng-views/stories.form.html",
+      templateUrl: "ng-view/story.form.html",
       scope: {
-        story: "="
+        story: "=",
+        formMethod: "@"
       },
       link: function(scope){
         scope.create = function(){
-          Story.save(scope.destination, function(response){
-            Story.all.push(response);
+          scope.story.save(scope.story, function(response){
+            story.all.push(response);
           });
         }
       }
