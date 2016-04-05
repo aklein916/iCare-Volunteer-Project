@@ -67,7 +67,7 @@
 
   function ShowControllerFunction(EventFactory, $stateParams){
     var showVM = this;
-    this.event = EventFactory.get({id: $stateParams.id})
+    showVM.event = EventFactory.get({id: $stateParams.id})
     // eventFactory.all.$promise.then(function(){
     //   eventFactory.all.forEach(function(event){
     //     if(event.id == $stateParams.id){
