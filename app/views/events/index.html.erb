@@ -1,15 +1,15 @@
-<head>
-    <title>Events</title>
-    <link rel="stylesheet" href="app/assets/stylesheets/application.css">
-    <script src="angular.js"></script>
-    <script src="data.js"></script>
-    <script src="application.js"></script>
-  </head>
-    <%= stylesheet_link_tag "application", property: "stylesheet" %>
-    <%= javascript_include_tag "events" %>
+<%= stylesheet_link_tag "application", property: "stylesheet" %>
+<%= javascript_include_tag "events" %>
+
+
+<div class="container" data-ng-app="icare">
+<header class="page-header">
+  <h1><a data-ui-sref="index" href="#">iCare</a></h1>
   </header>
-  <div class="container" data-ng-app="icare">
-    <h1>iCare</h1>
+  <main data-ui-view>
+
+  </main>
+<!--
   <main data-ng-controller="event_controller as vm">
     <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
     <table class="table table-striped">
@@ -42,9 +42,9 @@
             <input type="date" data-ng-model="vm.new_product.country" placeholder="mm/dd/yyyy" />
           </td>
           <td>
-          <!-- <td data-ng-click="vm.create()">&plus;</td> -->
-        </tr>
+          <! <td data-ng-click="vm.create()">&plus;</td> -->
+        <!-- </tr>
       </tbody>
     </table>
   </main>
-</div>
+</div> -->
