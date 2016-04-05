@@ -6,3 +6,58 @@ a:hover
 #home-content-box
 #home-header
 #home-p
+
+
+
+
+
+
+
+Event Naming (from events.js file)
+
+EventFactory
+EventFactoryFunction
+RouterFunction
+event_index_controller
+EventIndexControllerFunction
+event_show_controller
+EventShowControllerFunction
+eventForm
+EventFormDirectiveFunction
+
+.state("index", {
+  url: "/",
+templateUrl: "ng-view/event.index.html",
+controller: "event_index_controller",
+controllerAs: "EventIndexVM"
+
+.state("show",{
+  url: "/:id",
+  templateUrl: "ng-view/event.show.html",
+  controller: "event_show_controller",
+  controllerAs: "EventShowVM"
+
+
+
+
+
+Story Naming (from stories.js file)
+StoryFactory
+StoryFactoryFunction
+story_index_controller
+StoryIndexControllerFunction
+story_show_controller
+StoryShowControllerFunction
+storyForm
+StoryFormDirectiveFunction
+.state("index",
+  url: "/stories",
+  templateUrl: "ng-view/story.index.html"
+  controller: "story_index_controller",
+  controllerAs: "StoryIndexVM"
+
+.state("show",
+  url: "/stories/:id",
+  templateUrl: "ng-view/story.show.html",
+  controller: "story_show_controller",
+  controllerAs: "StoryShowVM"

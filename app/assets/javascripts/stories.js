@@ -9,24 +9,23 @@
     "ui.router",
     "ngResource"
   ])
-  .config([
-    "$stateProvider",
-    RouterFunction
-  ]);
   .factory("StoryFactory", [
     "$resource",
     StoryFactoryFunction
   ])
-  .controller("index_controller", [
-    "Story",
-    IndexControllerFunction
-  ]);
-  .controller("show_controller", [
+  .config([
+    "$stateProvider",
+    RouterFunction
+  ])
+  .controller("story_index_controller", [
+    "StoryFactory",
+    StoryIndexControllerFunction
+  ])
+  .controller("story_show_controller", [
     "StoryFactory",
     "$stateParams",
-    ShowControllerFunction
+    StoryShowControllerFunction
   ])
-
   .directive("storyForm", [
     "StoryFactory",
     "$state",
@@ -38,14 +37,14 @@
     .state("index", {
       url: "/stories",
       templateUrl: "ng-view/story.index.html"
-      controller: "index_controller",
-      controllerAs: "IndexVM"
+      controller: "story_index_controller",
+      controllerAs: "StoryIndexVM"
     })
     .state("show", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
-      controller: "show_controller",
-      controllerAs: "ShowVM"
+      controller: "story_show_controller",
+      controllerAs: "StoryShowVM"
     });
   }
   function StoryFactoryFunction($resource){
@@ -56,19 +55,19 @@
     vm.data = story.query();
     return Story;
 
-    function IndexControllerFunction(StoryFactory, $stateParams){
-    var indexVM = this;
-    indexVM.stories = StoryFactory.query();
-    indexVM.newStory = new StoryFactory();
+    function StoryIndexControllerFunction(StoryFactory, $stateParams){
+    var StoryIndexVM = this;
+    StoryIndexVM.stories = StoryFactory.query();
+    StoryIndexVM.newStory = new StoryFactory();
   }
 
-  function ShowControllerFunction(StoryFactory, $stateParams){
-    var showVM = this;
-    showVM.story = StoryFactory.get({id:$stateParams.id})
+  function StoryShowControllerFunction(StoryFactory, $stateParams){
+    var StoryShowVM = this;
+    StoryShowVM.story = StoryFactory.get({id:$stateParams.id})
     StoryFactory.all.$promise.then(function(){
       StoryFactory.all.forEach(function(story){
         if(story.id == $stateParams.id){
-          showVM.story == story;
+          StoryShowVM.story == story;
         }
       });
     });

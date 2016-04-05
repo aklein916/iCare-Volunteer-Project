@@ -17,14 +17,14 @@
     "$stateProvider",
     RouterFunction
   ])
-  .controller("index_controller", [
+  .controller("event_index_controller", [
     "EventFactory",
-    IndexControllerFunction
+    EventIndexControllerFunction
   ])
-  .controller("show_controller", [
+  .controller("event_show_controller", [
     "EventFactory",
     "$stateParams",
-    ShowControllerFunction
+    EventShowControllerFunction
   ])
   .directive("eventForm", [
     "EventFactory",
@@ -37,14 +37,14 @@
     .state("index", {
       url: "/",
       templateUrl: "ng-view/event.index.html",
-      controller: "index_controller",
-      controllerAs: "IndexVM"
+      controller: "event_index_controller",
+      controllerAs: "EventIndexVM"
     })
     .state("show",{
       url: "/:id",
       templateUrl: "ng-view/event.show.html",
-      controller: "show_controller",
-      controllerAs: "ShowVM"
+      controller: "event_show_controller",
+      controllerAs: "EventShowVM"
     });
   }
 
@@ -61,19 +61,19 @@
     return event;
   }
 
-  function IndexControllerFunction(EventFactory, $stateParams){
-    var indexVM = this;
-    indexVM.events = EventFactory.query();
-    indexVM.newEvent = new EventFactory();
+  function EventIndexControllerFunction(EventFactory, $stateParams){
+    var EventindexVM = this;
+    EventindexVM.events = EventFactory.query();
+    EventindexVM.newEvent = new EventFactory();
   }
 
-  function ShowControllerFunction(EventFactory, $stateParams){
-    var showVM = this;
-    showVM.event = EventFactory.get({id: $stateParams.id})
-    // eventFactory.all.$promise.then(function(){
-    //   eventFactory.all.forEach(function(event){
+  function EventShowControllerFunction(EventFactory, $stateParams){
+    var EventShowVM = this;
+    EventShowVM.event = EventFactory.get({id: $stateParams.id})
+    // EventFactory.all.$promise.then(function(){
+    //   EventFactory.all.forEach(function(event){
     //     if(event.id == $stateParams.id){
-    //       showVM.event = event;
+    //       EventShowVM.event = event;
   }
 
   function EventFormDirectiveFunction(EventFactory, $state){
