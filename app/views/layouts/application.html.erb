@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html data-ng-app="icare">
+<html>
 <head>
   <title>ICareVolunteerProject</title>
-  <link rel="stylesheet" href="../../app/assets/stylesheets/application.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <main data-ui-view=""></main>
   <nav id="top-menu-nav">
     <div class="container">
       <ul id="top-menu" class="nav">
@@ -25,6 +23,6 @@
     </div>
   </nav>
 
-<%= yield %>
+  <%= yield %>
 </body>
 </html>
