@@ -4,10 +4,10 @@ class EventsController < ApplicationController
     render status: 200, json: @events
   end
 
-  # def show
-  #   @event = Event.find(params[:id])
-  #   render status: 200, json: @events
-  # end
+  def show
+    @event = Event.find(params[:id])
+    # render status: 200, json: @event
+  end
 
   # def create
   #   @event = Event.new(event_params)

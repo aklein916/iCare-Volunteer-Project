@@ -36,13 +36,13 @@
     $stateProvider
     .state("index", {
       url: "/",
-      templateUrl: "ng-views/events.index.html"
+      templateUrl: "public/ng-view/event.index.html",
       controller: "index_controller",
       controllerAs: "indexVM"
     })
     .state("show",{
-      url: "/:id"
-      templateUrl: "ng-views/events.show.html"
+      url: "/:id",
+      templateUrl: "public/ng-view/event.show.html",
       controller: "show_controller",
       controllerAs: "showVM"
     });
@@ -68,39 +68,39 @@
   function ShowControllerFunction(EventFactory, $stateParams){
     var showVM = this;
     showVM.event = EventFactory.get({id: $stateParams.id})
-    // eventFactory.all.$promise.then(function(){
-    //   eventFactory.all.forEach(function(event){
-    //     if(event.id == $stateParams.id){
-    //       showVM.event = event;
+    EventFactory.all.$promise.then(function(){
+      EventFactory.all.forEach(function(event){
+        if(event.id == $stateParams.id){
+          showVM.event = event;
+        }
+      });
+    });
   }
-});
-});
-}
 
-function EventFormDirectiveFunction(EventFactory, $state){
-  return{
-    templateUrl: "ng-views/event.form.html",
-    scope: {
-      event:  "=",
-      formMethod:   "@"
-    },
-    link: function(scope){
-      scope.create = function(){
-        scope.event.save(scope.event, function(response){
-          event.all.push(response);
-        });
-      }
-      scope.update = function(){
-        event.update({id: scope.events.id}, scope.events, function(response){
-          console.log("Successful");
-        });
-      }
-      scope.delete = function(){
-        scope.event.$delete({id: scope.event.id}, function(){
-          $state.go("eventIndex", {}, {reload: true});
-        });
+  function EventFormDirectiveFunction(EventFactory, $state){
+    return{
+      templateUrl: "ng-views/event.form.html",
+      scope: {
+        event:  "=",
+        formMethod:   "@"
+      },
+      link: function(scope){
+        scope.create = function(){
+          scope.event.save(scope.event, function(response){
+            event.all.push(response);
+          });
+        }
+        scope.update = function(){
+          event.update({id: scope.events.id}, scope.events, function(response){
+            console.log("Successful");
+          });
+        }
+        scope.delete = function(){
+          scope.event.$delete({id: scope.event.id}, function(){
+            $state.go("eventIndex", {}, {reload: true});
+          });
+        }
       }
     }
   }
-}
 })();
