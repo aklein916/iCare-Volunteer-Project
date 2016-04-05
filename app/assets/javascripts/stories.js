@@ -21,6 +21,16 @@
     "Story",
     indexCtrlFunction
   ]);
+  .controller("showCtrl", [
+    "Story",
+    "$stateParams",
+    ShowControllerFunction
+  ])
+
+  .directive("storyForm", [
+    "Story",
+    storyFormFunction
+  ]);
 
   function RouterFunction($stateProvider){
     $stateProvider
@@ -31,7 +41,10 @@
       controllerAs: "indexVM"
     })
     .state("show", {
-      url: "/:id"
+      url: "/:id",
+      templateUrl: "ng-views/story.show.html",
+      controller: "showCtrl",
+      controllerAs: "showVM"
     });
   }
   function storyFactoryFunction($resource){
@@ -40,11 +53,22 @@
     });
     Story.all = Story.query();
     return Story;
-    
+
     function indexCtrlFunction(Story){
     var indexVM = this;
     indexVM.stories = Story.all;
     indexVM.newStory = new Story();
+  }
+
+  function showCtrlFunction(Story, $stateParams){
+    var showVM = this;
+    Story.all.$promise.then(function(){
+      Story.all.forReach(function(story){
+        if(story.id == $stateParams.id){
+          showVM.story == story;
+        }
+      });
+    });
   }
 
   function storyFormFunction(Story){
