@@ -55,21 +55,14 @@
   }
 
   function IndexControllerFunction(StoryFactory){
+    var IndexVM = this;
     this.stories = StoryFactory.query();
     this.newStory = new StoryFactory();
   }
 
-
   function ShowControllerFunction(StoryFactory, $stateParams){
     var showVM = this;
     showVM.story = StoryFactory.get({id:$stateParams.id})
-    // StoryFactory.all.$promise.then(function(){
-    //   StoryFactory.all.forEach(function(story){
-    //     if(story.id == $stateParams.id){
-    //       showVM.story == story;
-    //     }
-    //   });
-    // });
   }
 
   function StoryFormDirectiveFunction(StoryFactory, $state){
