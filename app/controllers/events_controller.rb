@@ -1,7 +1,10 @@
 class EventsController < ApplicationController
   def index
     @events = Event.all
-    render status: 200, json: @events
+    respond_to do |format|
+      format.html
+      format.json{ render status: 200, json: @events }
+    end
   end
 
   def show

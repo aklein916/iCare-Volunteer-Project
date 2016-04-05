@@ -13,7 +13,7 @@
     "$stateProvider",
     RouterFunction
   ])
-  .factory("eventFactory", [
+  .factory("EventFactory", [
     "$resource",
     EventFactoryFunction
   ])
@@ -27,7 +27,7 @@
     ShowControllerFunction
   ])
   .directive("eventForm", [
-    "eventFactory",
+    "EventFactory",
     "$state",
     EventFormDirectiveFunction
   ]);
@@ -36,15 +36,17 @@
     $stateProvider
     .state("index", {
       url: "/",
-      templateUrl: "public/ng-view/event.index.html",
+
+      templateUrl: "ng-view/event.index.html",
       controller: "index_controller",
-      controllerAs: "indexVM"
+      controllerAs: "vm"
     })
     .state("show",{
       url: "/:id",
-      templateUrl: "public/ng-view/event.show.html",
+
+      templateUrl: "ng-view/event.show.html",
       controller: "show_controller",
-      controllerAs: "showVM"
+      controllerAs: "vm"
     });
   }
 
@@ -52,13 +54,15 @@
     var vm = this;
     var event = $resource("/events/:id.json", {}, {
       update: {method: "PUT"}
-      vm.data = events.query();
-      vm.sort_data_by = function(title){
-        vm.sort_on = title;
-        vm.is_descending =!(vm.is_descending);
-      });
-    })
+    });
+    vm.data = event.query();
+    vm.sort_data_by = function(title){
+      vm.sort_on = title;
+      vm.is_descending =!(vm.is_descending);
+    }
+    return event;
   }
+
   function IndexControllerFunction(EventFactory, $stateParams){
     var indexVM = this;
     indexVM.events = EventFactory.query();
