@@ -12,21 +12,20 @@
   .config([
     "$stateProvider",
     RouterFunction
-  ]);
+  ])
   .factory("StoryFactory", [
     "$resource",
     StoryFactoryFunction
   ])
   .controller("index_controller", [
-    "Story",
+    "StoryFactory",
     IndexControllerFunction
-  ]);
+  ])
   .controller("show_controller", [
     "StoryFactory",
     "$stateParams",
     ShowControllerFunction
   ])
-
   .directive("storyForm", [
     "StoryFactory",
     "$state",
@@ -37,7 +36,7 @@
     $stateProvider
     .state("index", {
       url: "/stories",
-      templateUrl: "ng-view/story.index.html"
+      templateUrl: "ng-view/story.index.html",
       controller: "index_controller",
       controllerAs: "IndexVM"
     })
@@ -48,30 +47,29 @@
       controllerAs: "ShowVM"
     });
   }
+
   function StoryFactoryFunction($resource){
-    var vm = this;
-    var story = $resource("/stories/:id/json", {}, {
+    return $resource("http://localhost:3000/stories/:id.json", {}, {
       update: {method: "PUT"}
     });
-    vm.data = story.query();
-    return Story;
-
-    function IndexControllerFunction(StoryFactory, $stateParams){
-    var indexVM = this;
-    indexVM.stories = StoryFactory.query();
-    indexVM.newStory = new StoryFactory();
   }
+
+  function IndexControllerFunction(StoryFactory){
+    this.stories = StoryFactory.query();
+    this.newStory = new StoryFactory();
+  }
+
 
   function ShowControllerFunction(StoryFactory, $stateParams){
     var showVM = this;
     showVM.story = StoryFactory.get({id:$stateParams.id})
-    StoryFactory.all.$promise.then(function(){
-      StoryFactory.all.forEach(function(story){
-        if(story.id == $stateParams.id){
-          showVM.story == story;
-        }
-      });
-    });
+    // StoryFactory.all.$promise.then(function(){
+    //   StoryFactory.all.forEach(function(story){
+    //     if(story.id == $stateParams.id){
+    //       showVM.story == story;
+    //     }
+    //   });
+    // });
   }
 
   function StoryFormDirectiveFunction(StoryFactory, $state){
@@ -90,4 +88,5 @@
       }
     }
   }
-})();
+
+}());

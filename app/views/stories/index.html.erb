@@ -1,20 +1,20 @@
 <%= javascript_include_tag "stories" %>
 <div class="container" data-ng-app="icare">
-    <header class="jumbotron">
-      <h1>Stories</h1>
-    </header>
-    <main data-ng-controller="icare_controller as vm">
-      <h2><a data ng-ui-sref="{{vm.name}}"></a></h2>
-          <div data-ng-repeat="story in vm.data">
-              <h1><a data-ui-sref="{{story.name}"}></a></h1>
-              <h2><a data-ui-sref="{{story.age}}"></a></h2>
-              <h2><a data-ui-sref="{{story.cause}}"></a></h2>
-              <img data-ng-src="{{story.photo_url}}" alt="#" />
-              <p><a data-ui-sref="{{story.description}}"></a></p>
-          </div>
-          <footer class="foot">
-            <a data-ui-sref="vm.create()">Tell Us What Inspires You!</a>
-        </footer>
-    </main>
-    <main data-ui-view></main>
+  <header class="jumbotron">
+    <h1>Stories</h1>
+  </header>
+  <input type="text" placeholder="search for stories" data-ng-model="search">
+  <main data-ng-controller="index_controller as vm">
+    <div data-ng-repeat="story in vm.stories | filter:search">
+      <h1>{{story.name}}</h1>
+      <p>{{story.name}}<p>
+      <p>{{story.age}}</p>
+      <p>{{story.cause}}<p>
+      <img data-ng-src="{{story.photo_url}}" alt="#" />
+      <p>{{story.description}}</p>
+    </div>
+  </main>
+  <footer class="foot">
+    <a data-ui-sref="vm.create()">Tell Us What Inspires You!</a>
+  </footer>
 </div>
