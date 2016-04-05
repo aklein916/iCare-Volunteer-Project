@@ -9,22 +9,22 @@
     "ui.router",
     "ngResource"
   ])
-  .factory("StoryFactory", [
-    "$resource",
-    StoryFactoryFunction
-  ])
   .config([
     "$stateProvider",
     RouterFunction
   ])
-  .controller("story_index_controller", [
-    "StoryFactory",
-    StoryIndexControllerFunction
+  .factory("StoryFactory", [
+    "$resource",
+    StoryFactoryFunction
   ])
-  .controller("story_show_controller", [
+  .controller("index_controller", [
+    "StoryFactory",
+    IndexControllerFunction
+  ])
+  .controller("show_controller", [
     "StoryFactory",
     "$stateParams",
-    StoryShowControllerFunction
+    ShowControllerFunction
   ])
   .directive("storyForm", [
     "StoryFactory",
@@ -36,41 +36,40 @@
     $stateProvider
     .state("index", {
       url: "/stories",
-      templateUrl: "ng-view/story.index.html"
-      controller: "story_index_controller",
-      controllerAs: "StoryIndexVM"
+      templateUrl: "ng-view/story.index.html",
+      controller: "index_controller",
+      controllerAs: "IndexVM"
     })
     .state("show", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
-      controller: "story_show_controller",
-      controllerAs: "StoryShowVM"
+      controller: "show_controller",
+      controllerAs: "ShowVM"
     });
   }
+
   function StoryFactoryFunction($resource){
-    var vm = this;
-    var story = $resource("/stories/:id/json", {}, {
+    return $resource("http://localhost:3000/stories/:id.json", {}, {
       update: {method: "PUT"}
     });
-    vm.data = story.query();
-    return Story;
-
-    function StoryIndexControllerFunction(StoryFactory, $stateParams){
-    var StoryIndexVM = this;
-    StoryIndexVM.stories = StoryFactory.query();
-    StoryIndexVM.newStory = new StoryFactory();
   }
 
-  function StoryShowControllerFunction(StoryFactory, $stateParams){
-    var StoryShowVM = this;
-    StoryShowVM.story = StoryFactory.get({id:$stateParams.id})
-    StoryFactory.all.$promise.then(function(){
-      StoryFactory.all.forEach(function(story){
-        if(story.id == $stateParams.id){
-          StoryShowVM.story == story;
-        }
-      });
-    });
+  function IndexControllerFunction(StoryFactory){
+    this.stories = StoryFactory.query();
+    this.newStory = new StoryFactory();
+  }
+
+
+  function ShowControllerFunction(StoryFactory, $stateParams){
+    var showVM = this;
+    showVM.story = StoryFactory.get({id:$stateParams.id})
+    // StoryFactory.all.$promise.then(function(){
+    //   StoryFactory.all.forEach(function(story){
+    //     if(story.id == $stateParams.id){
+    //       showVM.story == story;
+    //     }
+    //   });
+    // });
   }
 
   function StoryFormDirectiveFunction(StoryFactory, $state){
@@ -89,4 +88,5 @@
       }
     }
   }
-})();
+
+}());

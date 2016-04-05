@@ -9,13 +9,13 @@
     "ui.router",
     "ngResource"
   ])
-  .factory("EventFactory", [
-    "$resource",
-    EventFactoryFunction
-  ])
   .config([
     "$stateProvider",
     RouterFunction
+  ])
+  .factory("EventFactory", [
+    "$resource",
+    EventFactoryFunction
   ])
   .controller("event_index_controller", [
     "EventFactory",
