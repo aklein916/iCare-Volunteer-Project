@@ -40,26 +40,26 @@
     });
     Story.all = Story.query();
     return Story;
+    
     function indexCtrlFunction(Story){
     var indexVM = this;
     indexVM.stories = Story.all;
+    indexVM.newStory = new Story();
+  }
+
+  function storyFormFunction(Story){
+    return{
+      templateUrl: "ng-views/stories.form.html",
+      scope: {
+        story: "="
+      },
+      link: function(scope){
+        scope.create = function(){
+          Story.save(scope.destination, function(response){
+            Story.all.push(response);
+          });
+        }
+      }
+    }
   }
 })();
-// (function(){
-//   angular
-//   .module("story", ["ngResource"])
-//   .controller("story_controller", StoryController);
-//
-//   StoryController.$inject = ["$resource"];
-//
-//   function StoryController($resource){
-//     var vm= this;
-//     var story = $resource("/stories/:id.json", {}, {
-//       vm.data.forEach(function(story){
-//       });
-//       vm.sort_data_by = function(name){
-//         vm.sort_on = name;
-//       }
-//     })
-//   }
-// })
