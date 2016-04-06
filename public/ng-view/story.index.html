@@ -1,6 +1,4 @@
-<div class="container" data-ng-app="icare">
   <header class="jumbotron">
-      <h1><a data-ui-sref="StoryIndex" href="#">iCare</a></h1>
   </header>
   <input type="text" placeholder="search for stories" data-ng-model="search">
   <main data-ng-controller="index_controller as vm">
@@ -14,12 +12,9 @@
   </main>
   <footer class="foot">
     <div ng-show="formType @ 'create()'">
-        <button data-ng-click="storyForm">Tell Us What Inspires You!</button>
+      <button type="button" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
       </div>
-
       <div ng-show="formMethod == 'storyForm'">
-          <button data-ng-click="storyForm">Tell Us What Inspires You!</button>
+          <button type= "button" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
         </div>
   </footer>
-  <main data-ui-view></main>
-</div>
