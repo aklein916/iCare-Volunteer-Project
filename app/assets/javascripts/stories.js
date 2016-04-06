@@ -38,13 +38,13 @@
       url: "/stories",
       templateUrl: "ng-view/story.index.html",
       controller: "story_index_controller",
-      controllerAs: "IndexVM"
+      controllerAs: "StoryIndexVM"
     })
     .state("storyShow", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
       controller: "story_show_controller",
-      controllerAs: "ShowVM"
+      controllerAs: "StoryShowVM"
     });
   }
 
@@ -61,13 +61,13 @@
   }
 
   function StoryIndexControllerFunction(StoryFactory){
-    var IndexVM = this;
+    var StoryIndexVM = this;
     this.stories = StoryFactory.query();
     this.newStory = new StoryFactory();
   }
 
   function StoryShowControllerFunction(StoryFactory, $stateParams){
-    var ShowVM = this;
+    var StoryShowVM = this;
     ShowVM.story = StoryFactory.get({id:$stateParams.id})
   }
 
