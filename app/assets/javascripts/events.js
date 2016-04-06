@@ -26,11 +26,6 @@
     "$stateParams",
     EventShowControllerFunction
   ])
-  .directive("eventForm", [
-    "EventFactory",
-    "$state",
-    EventFormDirectiveFunction
-  ]);
 
   function RouterFunction($stateProvider){
     $stateProvider
@@ -38,13 +33,13 @@
       url: "",
       templateUrl: "ng-view/event.index.html",
       controller: "event_index_controller",
-      controllerAs: "IndexVM"
+      controllerAs: "EventIndexVM"
     })
     .state("eventShow",{
       url: "/events",
       templateUrl: "ng-view/event.show.html",
       controller: "event_show_controller",
-      controllerAs: "ShowVM"
+      controllerAs: "EventShowVM"
     });
   }
 
@@ -63,31 +58,14 @@
   }
 
   function EventIndexControllerFunction(EventFactory){
-    var IndexVM = this;
+    var EventIndexVM = this;
     this.events = EventFactory.query();
     this.newEvent = new EventFactory();
   }
 
   function EventShowControllerFunction(EventFactory, $stateParams){
-    var ShowVM = this;
-    ShowVM.event = EventFactory.get({id: $stateParams.id})
-  }
-
-  function EventFormDirectiveFunction(EventFactory, $state){
-    return{
-      templateUrl: "ng-view/event.form.html",
-      scope: {
-        event: "=",
-        formMethod: "@"
-      },
-      link: function(scope){
-        scope.create = function(){
-          scope.event.$save(scope.event, function(response){
-            event.all.push(response);
-          });
-        }
-      }
-    }
+    var EventShowVM = this;
+    EventShowVM.event = EventFactory.get({id: $stateParams.id})
   }
 
 }());

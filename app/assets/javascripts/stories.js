@@ -17,14 +17,14 @@
     "$resource",
     StoryFactoryFunction
   ])
-  .controller("index_controller", [
+  .controller("story_index_controller", [
     "StoryFactory",
-    IndexControllerFunction
+    StoryIndexControllerFunction
   ])
-  .controller("show_controller", [
+  .controller("story_show_controller", [
     "StoryFactory",
     "$stateParams",
-    ShowControllerFunction
+    StoryShowControllerFunction
   ])
   .directive("storyForm", [
     "StoryFactory",
@@ -37,14 +37,14 @@
     .state("storyIndex", {
       url: "/stories",
       templateUrl: "ng-view/story.index.html",
-      controller: "index_controller",
-      controllerAs: "IndexVM"
+      controller: "story_index_controller",
+      controllerAs: "StoryIndexVM"
     })
     .state("storyShow", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
-      controller: "show_controller",
-      controllerAs: "ShowVM"
+      controller: "story_show_controller",
+      controllerAs: "StoryShowVM"
     });
   }
 
@@ -52,17 +52,23 @@
     return $resource("http://localhost:3000/stories/:id.json", {}, {
       update: {method: "PUT"}
     });
+    vm.data = story.query();
+    vm.sort_data_by = function(name){
+      vm.sort_on = name;
+      vm.is_descending =!(vm.is_descending);
+    }
+    return event;
   }
 
-  function IndexControllerFunction(StoryFactory){
-    var IndexVM = this;
+  function StoryIndexControllerFunction(StoryFactory){
+    var StoryIndexVM = this;
     this.stories = StoryFactory.query();
     this.newStory = new StoryFactory();
   }
 
-  function ShowControllerFunction(StoryFactory, $stateParams){
-    var showVM = this;
-    showVM.story = StoryFactory.get({id:$stateParams.id})
+  function StoryShowControllerFunction(StoryFactory, $stateParams){
+    var StoryShowVM = this;
+    ShowVM.story = StoryFactory.get({id:$stateParams.id})
   }
 
   function StoryFormDirectiveFunction(StoryFactory, $state){

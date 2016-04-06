@@ -1,6 +1,6 @@
 <div class="container" data-ng-app="icare">
   <header class="jumbotron">
-    <h1>Stories</h1>
+      <h1><a data-ui-sref="StoryIndex" href="#">iCare</a></h1>
   </header>
   <input type="text" placeholder="search for stories" data-ng-model="search">
   <main data-ng-controller="index_controller as vm">
@@ -21,4 +21,5 @@
           <button data-ng-click="storyForm">Tell Us What Inspires You!</button>
         </div>
   </footer>
+  <main data-ui-view></main>
 </div>
