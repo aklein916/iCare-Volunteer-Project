@@ -80,8 +80,8 @@
       },
       link: function(scope){
         scope.create = function(){
-          scope.story.$save(scope.story, function(response){
-            event.all.push(response);
+          scope.story.save(scope.story, function(response){
+            story.all.push(response);
           });
         }
       }

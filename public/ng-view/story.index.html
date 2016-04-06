@@ -13,12 +13,13 @@
     </div>
   </main>
   <footer class="foot">
-    <div ng-show="formMethod @ 'create()'">
+    <div ng-show="formType @ 'create()'">
         <button data-ng-click="storyForm">Tell Us What Inspires You!</button>
       </div>
-<a data-ui-sref="create()">New Grumble</a>
 
-    <a data-ui-sref="storyForm"></a>
+      <div ng-show="formMethod == 'storyForm'">
+          <button data-ng-click="storyForm">Tell Us What Inspires You!</button>
+        </div>
   </footer>
   <main data-ui-view></main>
 </div>
