@@ -1,3 +1,4 @@
+<main data-ng-controller="event_index_controller as vm">
 <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
 <table class="table table-striped">
   <thead>
@@ -13,21 +14,21 @@
       <th></th>
     </tr>
   </thead>
-  <main data-ng-controller="event_index_controller as vm">
+
   <tbody>
     <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
-      <td>{{}}</td>
+      <td></td>
       <td colspan="2">
-        <input type="text" data-ng-model="{{event.title}}" placeholder="Name" />
+        <input type="text" data-ng-model="event.title" placeholder="Name" />
       </td>
       <td>
         <input type="text" data-ng-model="event.organizer" placeholder="Organizer" />
       </td>
       <td>
-        <input type="text" data-ng-model="event.category" placeholder="Category" />
+        <input type="text" data-ng-model="event.focus_area" placeholder="Category" />
       </td>
       <td>
-        <input type="date" data-ng-model="event.country" placeholder="mm/dd/yyyy" />
+        <input type="date" data-ng-model="event.start_date" placeholder="mm/dd/yyyy" />
       </td>
       <td data-ng-click="vm.create()">&plus;</td>
     </tr>

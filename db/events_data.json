@@ -2,26 +2,26 @@
   { "title": "Need volunteers to mentor DCPS/DCPCS students!",
     "organizer": "College Bound",
     "focus_area": "Children & Youth",
-    "address": "128 M St NW, Washington, DC"
-  },
+    "address": "128 M St NW, Washington, DC"},
+
   { "title" : "Skilled Volunteers Needed For Seniors",
     "organizer": "AHC Inc.- Charter House",
     "focus_area": "Seniors",
-    "address": "Silver Spring, 20910"
-  },
+    "address": "Silver Spring, 20910"},
+
   { "title": "Credit Union Cherry Blossom Ten Mile Run",
     "organizer": "Credit Union Cherry Blossom Ten Mile Run",
     "focus_area": "Children & Youth",
-    "address": "Washington Monument Grounds, Washington, DC 11111"
-  },
+    "address": "Washington Monument Grounds, Washington, DC 11111"},
+
   { "title": "Seeking Mentors for National Youth Development Program",
-    "organizer": "Community Preservation and Development Corporation",
-    "focus_area": "Community Development",
-    "address": "8403 Colesville Road, Suite 1150, SIlver Spring, Maruland 20910"
-    },
-    { "title": "Community Educator",
-      "organizer": "DC Rape Crisis Center",
-      "focus_area": "Advocacy and Human Rights",
-      "address": "DCRCC 5321 1st Place, NE, Washington, DC 20011"
+  "organizer": "Community Preservation and Development Corporation",
+  "focus_area": "Community Development",
+  "address": "8403 Colesville Road, Suite 1150, SIlver Spring, Maryland 20910"},
+
+  { "title": "Community Educator",
+    "organizer": "DC Rape Crisis Center",
+    "focus_area": "Advocacy and Human Rights",
+    "address": "DCRCC 5321 1st Place, NE, Washington, DC 20011"
     }
 ]
