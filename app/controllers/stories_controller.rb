@@ -24,7 +24,7 @@ class StoriesController < ApplicationController
     def update
       @story.update!(story_params)
       render status: 200, json: @stories
-    end    
+    end
   end
 
 
