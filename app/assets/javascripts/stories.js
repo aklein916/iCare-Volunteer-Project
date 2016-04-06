@@ -17,14 +17,14 @@
     "$resource",
     StoryFactoryFunction
   ])
-  .controller("index_controller", [
+  .controller("story_index_controller", [
     "StoryFactory",
-    IndexControllerFunction
+    StoryIndexControllerFunction
   ])
-  .controller("show_controller", [
+  .controller("story_show_controller", [
     "StoryFactory",
     "$stateParams",
-    ShowControllerFunction
+    StoryShowControllerFunction
   ])
   .directive("storyForm", [
     "StoryFactory",
@@ -37,13 +37,13 @@
     .state("storyIndex", {
       url: "/stories",
       templateUrl: "ng-view/story.index.html",
-      controller: "index_controller",
+      controller: "story_index_controller",
       controllerAs: "IndexVM"
     })
     .state("storyShow", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
-      controller: "show_controller",
+      controller: "story_show_controller",
       controllerAs: "ShowVM"
     });
   }
@@ -52,17 +52,23 @@
     return $resource("http://localhost:3000/stories/:id.json", {}, {
       update: {method: "PUT"}
     });
+    vm.data = story.query();
+    vm.sort_data_by = function(name){
+      vm.sort_on = name;
+      vm.is_descending =!(vm.is_descending);
+    }
+    return event;
   }
 
-  function IndexControllerFunction(StoryFactory){
+  function StoryIndexControllerFunction(StoryFactory){
     var IndexVM = this;
     this.stories = StoryFactory.query();
     this.newStory = new StoryFactory();
   }
 
-  function ShowControllerFunction(StoryFactory, $stateParams){
-    var showVM = this;
-    showVM.story = StoryFactory.get({id:$stateParams.id})
+  function StoryShowControllerFunction(StoryFactory, $stateParams){
+    var ShowVM = this;
+    ShowVM.story = StoryFactory.get({id:$stateParams.id})
   }
 
   function StoryFormDirectiveFunction(StoryFactory, $state){
@@ -75,7 +81,7 @@
       link: function(scope){
         scope.create = function(){
           scope.story.$save(scope.story, function(response){
-            $state.go("storyIndex", {}, {reload: true});
+            event.all.push(response);
           });
         }
       }
