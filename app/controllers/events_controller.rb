@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   def index
     @events = Event.all
     respond_to do |format|
@@ -10,15 +11,6 @@ class EventsController < ApplicationController
   # def show
   #   @event = Event.find(params[:id])
   #   render status: 200, json: @events
-  # end
-
-  # def create
-  #   @event = Event.new(event_params)
-  #
-  #   if @event.save
-  #     render status: 200, json: @events
-  #   else
-  #     render status: 200, :created, json: @events
   # end
 
   private
