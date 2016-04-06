@@ -65,7 +65,7 @@
 
   function EventShowControllerFunction(EventFactory, $stateParams){
     var EventShowVM = this;
-    EventShowVM.event = EventFactory.get({id: $stateParams.id})
+    EventShowVM.event = EventFactory.get[{id: $stateParams.id}]
   }
 
 }());
