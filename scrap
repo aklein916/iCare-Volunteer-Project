@@ -35,3 +35,25 @@
       <div data-story-form data-story="IndexVM.newStory"></div>
     </div>
   </div>
+
+
+
+  <div data-story-form data-story="this.newStory"></div>
+
+
+<h2>{{showVM.story.name}}</h2>
+<p>{{showVM.story.story}}</p>
+<img class="img-responsive img-rounded" data-ng-src="{{showVM.story.photo_url}}" alt="Story" />
+
+
+<form>
+<input placeholder="Title" data-ng-model="grumble.title" />
+<input placeholder="Author name" data-ng-model="grumble.authorName" />
+<input placeholder="Photo URL" data-ng-model="grumble.photoUrl" />
+<textarea placeholder="Grumble content" data-ng-model="grumble.content"></textarea>
+<button type="button" data-ng-if="!grumble.id" data-ng-click="create()">Create</button>
+<div data-ng-if="grumble.id">
+  <button type="button" data-ng-click="update()">Update</button>
+  <button type="button" data-ng-click="delete()">Delete</button>
+</div>
+</form>

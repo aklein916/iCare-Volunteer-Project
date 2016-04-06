@@ -1,4 +1,21 @@
-<h2>Add your story</h2>
+<div data-ng-switch="formMethod">
+<div data-story-form data-story="this.newStory"></div>
+
+<form>
+  <input placeholder="Title" data-ng-model="story.name" />
+  <input placeholder="story.age" data-ng-model="story.age" />
+  <input placeholder="story.cause" data-ng-model="story.cause" />
+  <input placeholder="story.photo_url" data-ng-model="story.photo_url" />
+  <textarea placeholder="story.story" data-ng-model="story.story"></textarea>
+  <button type="button" data-ng-if="!story.id" data-ng-click="create()">Create</button>
+  </div>
+</form>
+
+
+
+
+
+<h1>Add your story</h1>
 <fieldset class="input-group">
   <input type="text" class="form-control" data-ng-model="story.name" id="name" />
   <label for="name">Name</label>

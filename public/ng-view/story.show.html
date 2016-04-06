@@ -1,4 +1,34 @@
+<div data-story-form data-story="this.newStory"></div>
+<div data-ng-switch="formMethod">
+<form>
+  <input placeholder="Title" data-ng-model="story.name" />
+  <input placeholder="story.age" data-ng-model="story.age" />
+  <input placeholder="story.cause" data-ng-model="story.cause" />
+  <input placeholder="story.photo_url" data-ng-model="story.photo_url" />
+  <textarea placeholder="story.story" data-ng-model="story.story"></textarea>
+  <button type="button" data-ng-if="!story.id" data-ng-click="create()">Create</button>
+  </div>
+</form>
 
-<h2>{{showVM.story.name}}</h2>
-<p>{{showVM.story.story}}</p>
-<img class="img-responsive img-rounded" data-ng-src="{{showVM.story.photo_url}}" alt="Story" />
+<h1>Add your story</h1>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.name" id="name" />
+  <label for="name">Name</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="integer" class="form-control" data-ng-model="story.age" id="age" />
+  <label for="age">Age</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.cause" id="cause" />
+  <label for="cause">Cause</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.photo_url" id="photo_url" />
+  <label for="photo_url">Photo URL</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.story" id="story" />
+  <label for="story">Your Story</label>
+</fieldset>
+<button type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>
