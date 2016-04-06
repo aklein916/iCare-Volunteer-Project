@@ -1,7 +1,7 @@
   <header class="jumbotron">
   </header>
   <input type="text" placeholder="search for stories" data-ng-model="search">
-  <main data-ng-controller="index_controller as vm">
+  <main data-ng-controller="story_index_controller as vm">
     <div data-ng-repeat="story in vm.stories | filter:search">
       <h1>{{story.name}}</h1>
       <p>{{story.age}}</p>
