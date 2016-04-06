@@ -35,7 +35,7 @@
   function RouterFunction($stateProvider){
     $stateProvider
     .state("eventIndex", {
-      url: "/events",
+      url: "/",
       templateUrl: "ng-view/event.index.html",
       controller: "event_index_controller",
       controllerAs: "IndexVM"
