@@ -6,15 +6,14 @@
   <main data-ng-controller="index_controller as vm">
     <div data-ng-repeat="story in vm.stories | filter:search">
       <h1>{{story.name}}</h1>
-      <p>{{story.name}}<p>
       <p>{{story.age}}</p>
       <p>{{story.cause}}<p>
       <img data-ng-src="{{story.photo_url}}" alt="#" />
-      <p>{{story.description}}</p>
+      <p>{{story.story}}<p>
     </div>
   </main>
   <footer class="foot">
-    <div data-story-form data-story="GrumbleIndexViewModel.newGrumble"></div>
-    <a data-ui-sref="vm.create()">Tell Us What Inspires You!</a>
+
+    <a data-ui-sref="storyForm">Tell Us What Inspires You!</a>
   </footer>
 </div>

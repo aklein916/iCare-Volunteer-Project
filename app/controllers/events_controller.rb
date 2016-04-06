@@ -8,10 +8,9 @@ class EventsController < ApplicationController
     end
   end
 
-  # def show
-  #   @event = Event.find(params[:id])
-  #   render status: 200, json: @events
-  # end
+  def show
+    render status: 200, json: @events
+  end
 
   private
   def event_params
