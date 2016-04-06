@@ -13,7 +13,11 @@
     </div>
   </main>
   <footer class="foot">
+    <div ng-show="formMethod @ 'create()'">
+        <button data-ng-click="storyForm">Tell Us What Inspires You!</button>
+      </div>
+<a data-ui-sref="create()">New Grumble</a>
 
-    <a data-ui-sref="storyForm">Tell Us What Inspires You!</a>
+    <a data-ui-sref="storyForm"></a>
   </footer>
 </div>
