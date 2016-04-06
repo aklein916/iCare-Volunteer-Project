@@ -34,13 +34,13 @@
 
   function RouterFunction($stateProvider){
     $stateProvider
-    .state("index", {
+    .state("storyIndex", {
       url: "/stories",
       templateUrl: "ng-view/story.index.html",
       controller: "index_controller",
       controllerAs: "IndexVM"
     })
-    .state("show", {
+    .state("storyShow", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
       controller: "show_controller",
