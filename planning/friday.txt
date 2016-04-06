@@ -1,0 +1,29 @@
+Goals for first day
+
+Idea
+levels
+user story
+wireframe
+
+breakdown of week
+plan of files
+responsibilites
+timeline
+
+
+
+
+
+Views
+
+
+
+
+
+API we are creating:
+Volunteer event database
+
+
+
+We will pull from google maps api
+and can push into google calendar api
