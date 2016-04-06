@@ -4,7 +4,7 @@
     <tr>
       <td data-ng-click="vm.is_descending = !(vm.is_descending)">
         <span data-ng-if="vm.is_descending">z-a</span>
-        <span data-ng-if="!vm.is_descending">a-z</span>
+        <span data-ng-if="vm.is_descending">a-z</span>
       </td>
       <th data-ng-click="vm.sort_data_by('title')">Title</th>
       <th data-ng-click="vm.sort_data_by('organizer')">Organizer</th>
@@ -13,11 +13,12 @@
       <th></th>
     </tr>
   </thead>
+  <main data-ng-controller="event_index_controller as vm">
   <tbody>
-    <tr data-ng-repeat="event in vm.event | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
-      <td>{{$index + 1}}</td>
+    <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
+      <td>{{}}</td>
       <td colspan="2">
-        <input type="text" data-ng-model="event.title" placeholder="Name" />
+        <input type="text" data-ng-model="{{event.title}}" placeholder="Name" />
       </td>
       <td>
         <input type="text" data-ng-model="event.organizer" placeholder="Organizer" />
@@ -31,4 +32,5 @@
       <td data-ng-click="vm.create()">&plus;</td>
     </tr>
   </tbody>
+</main>
 </table>
