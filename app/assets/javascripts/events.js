@@ -54,8 +54,6 @@
      $resource("http://localhost:3000/events/:id.json", {}, {
       update: {method: "PUT"}
     });
-
-    "/events/:id.json"
     vm.data = event.query();
     vm.sort_data_by = function(title){
       vm.sort_on = title;
@@ -84,7 +82,7 @@
       },
       link: function(scope){
         scope.create = function(){
-          scope.event.save(scope.event, function(response){
+          scope.event.$save(scope.event, function(response){
             event.all.push(response);
           });
         }
