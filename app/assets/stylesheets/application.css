@@ -13,6 +13,11 @@
  *= require_self
  */
 
+header {
+  margin-top:100px;
+}
+
+
  #top-menu-nav {
    position: fixed;
    top: 0;

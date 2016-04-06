@@ -1,20 +1,9 @@
+<%= stylesheet_link_tag "application", property: :stylesheet %>
 <%= javascript_include_tag "stories" %>
-<div class="container" data-ng-app="icare">
-  <header class="jumbotron">
-    <h1>Stories</h1>
-  </header>
-  <input type="text" placeholder="search for stories" data-ng-model="search">
-  <main data-ng-controller="index_controller as vm">
-    <div data-ng-repeat="story in vm.stories | filter:search">
-      <h1>{{story.name}}</h1>
-      <p>{{story.name}}<p>
-      <p>{{story.age}}</p>
-      <p>{{story.cause}}<p>
-      <img data-ng-src="{{story.photo_url}}" alt="#" />
-      <p>{{story.description}}</p>
-    </div>
-  </main>
-  <footer class="foot">
-    <a data-ui-sref="vm.create()">Tell Us What Inspires You!</a>
-  </footer>
+
+<div class="container">
+<header class="page-header">
+  <h1><a data-ui-sref="storyIndex" href="#">iCare</a></h1>
+</header>
+<main data-ui-view></main>
 </div>

@@ -34,13 +34,13 @@
 
   function RouterFunction($stateProvider){
     $stateProvider
-    .state("index", {
+    .state("eventIndex", {
       url: "/",
       templateUrl: "ng-view/event.index.html",
       controller: "event_index_controller",
       controllerAs: "IndexVM"
     })
-    .state("show",{
+    .state("eventShow",{
       url: "/:id",
       templateUrl: "ng-view/event.show.html",
       controller: "event_show_controller",
@@ -50,9 +50,12 @@
 
   function EventFactoryFunction($resource){
     var vm = this;
-    var event = $resource("http://localhost:3000/events/:id.json", {}, {
+    var event =
+     $resource("http://localhost:3000/events/:id.json", {}, {
       update: {method: "PUT"}
     });
+
+    "/events/:id.json"
     vm.data = event.query();
     vm.sort_data_by = function(title){
       vm.sort_on = title;

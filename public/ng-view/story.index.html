@@ -1,14 +1,19 @@
-<div class="row well" data-ng-repeat="story in indexVM.stories">
-  <div class="col-md-6">
-    <h3><a href="#" data-ui-sref="show({id: story.id})">{{story.name}}</a></h3>
-    <p>{{story.story}}</p>
-  </div>
-  <div class="col-md-6">
-    <img class="img-responsive img-rounded" data-ng-src="{{story.photo_url}}" />
-  </div>
-</div>
-<div class="row well">
-    <div class = "col-md-6">
-      <div data-story-form data-story="indexVM.newStory"></div>
+<div class="container" data-ng-app="icare">
+  <header class="jumbotron">
+    <h1>Stories</h1>
+  </header>
+  <input type="text" placeholder="search for stories" data-ng-model="search">
+  <main data-ng-controller="index_controller as vm">
+    <div data-ng-repeat="story in vm.stories | filter:search">
+      <h1>{{story.name}}</h1>
+      <p>{{story.age}}</p>
+      <p>{{story.cause}}<p>
+      <img data-ng-src="{{story.photo_url}}" alt="#" />
+      <p>{{story.story}}<p>
     </div>
-  </div>    
+  </main>
+  <footer class="foot">
+
+    <a data-ui-sref="storyForm">Tell Us What Inspires You!</a>
+  </footer>
+</div>

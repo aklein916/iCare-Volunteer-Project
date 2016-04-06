@@ -34,13 +34,13 @@
 
   function RouterFunction($stateProvider){
     $stateProvider
-    .state("index", {
+    .state("storyIndex", {
       url: "/stories",
       templateUrl: "ng-view/story.index.html",
       controller: "index_controller",
       controllerAs: "IndexVM"
     })
-    .state("show", {
+    .state("storyShow", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
       controller: "show_controller",
@@ -74,8 +74,8 @@
       },
       link: function(scope){
         scope.create = function(){
-          scope.story.save(scope.story, function(response){
-            story.all.push(response);
+          scope.story.$save(scope.story, function(response){
+            $state.go("storyIndex", {}, {reload: true});
           });
         }
       }

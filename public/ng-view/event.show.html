@@ -1,13 +1,34 @@
-<body id="home-body">
-  <div id="home-content-box">
-    <h1 id="home-header">WHAT DO YOU CARE ABOUT?</h1>
-    <p id="home-p">This is where the search for a cause bar will go</p>
-  </div>
-</body>
-
-
-<h2>{{ShowVM.event.name}}</h2>
-<p>{{ShowVM.event.description}}</p>
-<img class="img-responsive img-rounded" data-ng-src="{{ShowVM.event.image_url}}" alt="Events" />
-
-<div class="well" data-event-form data-event="ShowVM.event" data-form-method="edit"></div>
+<input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <td data-ng-click="vm.is_descending = !(vm.is_descending)">
+        <span data-ng-if="vm.is_descending">z-a</span>
+        <span data-ng-if="!vm.is_descending">a-z</span>
+      </td>
+      <th data-ng-click="vm.sort_data_by('title')">Title</th>
+      <th data-ng-click="vm.sort_data_by('organizer')">Organizer</th>
+      <th data-ng-click="vm.sort_data_by('focus_area')">Category</th>
+      <th data-ng-click="vm.sort_data_by('start_date')">Start Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="event in vm.event | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
+      <td>{{$index + 1}}</td>
+      <td colspan="2">
+        <input type="text" data-ng-model="event.title" placeholder="Name" />
+      </td>
+      <td>
+        <input type="text" data-ng-model="event.organizer" placeholder="Organizer" />
+      </td>
+      <td>
+        <input type="text" data-ng-model="event.category" placeholder="Category" />
+      </td>
+      <td>
+        <input type="date" data-ng-model="event.country" placeholder="mm/dd/yyyy" />
+      </td>
+      <td data-ng-click="vm.create()">&plus;</td>
+    </tr>
+  </tbody>
+</table>
