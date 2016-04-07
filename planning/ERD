@@ -1,0 +1,13 @@
+
+
+
+     Location: DC
+        |
+      / | \
+      Organizations
+        |
+      / | \
+      Events <--- OUR Database
+
+      Events has many locations
+      

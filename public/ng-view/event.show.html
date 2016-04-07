@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <head>
 </head>
@@ -21,6 +22,9 @@ tbody tr:nth-of-type(odd) {
   <div class="dc-image-container">
   </div>
 
+=======
+<main data-ng-controller="event_index_controller as vm">
+>>>>>>> 076b635b4b6765c67e47b016634e1733390a74f7
 <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
 <table class="table table-striped">
   <thead>
@@ -36,21 +40,21 @@ tbody tr:nth-of-type(odd) {
       <th></th>
     </tr>
   </thead>
-  <main data-ng-controller="event_index_controller as vm">
+
   <tbody>
     <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
-      <td>{{}}</td>
+      <td></td>
       <td colspan="2">
-        <input type="text" data-ng-model="{{event.title}}" placeholder="Name" />
+        <input type="text" data-ng-model="event.title" placeholder="Name" />
       </td>
       <td>
         <input type="text" data-ng-model="event.organizer" placeholder="Organizer" />
       </td>
       <td>
-        <input type="text" data-ng-model="event.category" placeholder="Category" />
+        <input type="text" data-ng-model="event.focus_area" placeholder="Category" />
       </td>
       <td>
-        <input type="date" data-ng-model="event.country" placeholder="mm/dd/yyyy" />
+        <input type="date" data-ng-model="event.start_date" placeholder="mm/dd/yyyy" />
       </td>
       <td data-ng-click="vm.create()">&plus;</td>
     </tr>

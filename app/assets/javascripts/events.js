@@ -77,7 +77,7 @@
     var vm = this;
     var event =
      $resource("http://localhost:3000/events/:id.json", {}, {
-      update: {method: "PUT"}
+      UPDATE: {method: "PUT"}
     });
     vm.data = event.query();
     vm.sort_data_by = function(title){
@@ -102,11 +102,11 @@
     return $resource("http://localhost:3000/stories/:id.json", {}, {
       update: {method: "PUT"}
     });
-    // vm.data = story.query();
-    // vm.sort_data_by = function(name){
-    //   vm.sort_on = name;
-    //   vm.is_descending =!(vm.is_descending);
-    // }
+    vm.data = story.query();
+    vm.sort_data_by = function(name){
+      vm.sort_on = name;
+      vm.is_descending =!(vm.is_descending);
+    }
   }
 
   function StoryIndexControllerFunction(StoryFactory){
