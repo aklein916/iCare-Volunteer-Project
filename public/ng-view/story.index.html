@@ -38,8 +38,8 @@ img {
 </style>
 <body>
   <header class="head">
-      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex">Tell Us What Inspires You!</a></button>
-    <div ng-show="formMethod = 'create()'">
+    <div data-ng-switch="storyForm">
+      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex">Tell Us What Inspires You!</button>
     </div>
   </header>
 
@@ -54,4 +54,7 @@ img {
         </div>
       </main>
     </body>
+    <footer class="foot">
+      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex">Tell Us What Inspires You!</button>
+    </footer>
     </html>
