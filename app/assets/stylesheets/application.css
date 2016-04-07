@@ -77,3 +77,8 @@ header {
 #home-p {
   font-family: "Quicksand", sans-serif;
 }
+
+#map {
+        width: 500px;
+        height: 500px;
+      }
