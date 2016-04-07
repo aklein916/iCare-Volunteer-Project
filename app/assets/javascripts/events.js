@@ -39,6 +39,9 @@
     "StoryFactory",
     StoryIndexControllerFunction
   ])
+  .controller("story_form_controller", [
+    StoryFormControllerFunction
+  ])
   .controller("story_show_controller", [
     "StoryFactory",
     "$stateParams",
@@ -65,12 +68,19 @@
       controller: "story_index_controller",
       controllerAs: "StoryIndexVM"
     })
+    .state("storyForm", {
+      url: "/stories/new",
+      templateUrl: "ng-view/story.form.html",
+      controller: "story_form_controller",
+      controllerAs: "StoryFormVM"
+    })
     .state("storyShow", {
       url: "/stories/:id",
       templateUrl: "ng-view/story.show.html",
       controller: "story_show_controller",
       controllerAs: "StoryShowVM"
     });
+
   }
 
   function EventFactoryFunction($resource){
@@ -115,6 +125,9 @@
     this.stories = StoryFactory.query();
     this.newStory = new StoryFactory();
   }
+  function StoryFormControllerFunction(){
+
+  }
 
   function StoryShowControllerFunction(StoryFactory, $stateParams){
     var StoryShowVM = this;
@@ -123,12 +136,12 @@
 
   function StoryFormDirectiveFunction(StoryFactory, $state){
     return{
-      templateUrl: "ng-view/story.form.html",
+      templateUrl: "ng-view/_story.form.html",
       scope: {
-        story: "=",
         formMethod: "@"
       },
       link: function(scope){
+        console.log('here')
         scope.create = function(){
           scope.story.$save(scope.story, function(response){
             $state.go("storyIndex", {}, {reload: true});
