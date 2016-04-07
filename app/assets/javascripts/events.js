@@ -96,13 +96,11 @@
     }
     return event;
   }
-
   function EventIndexControllerFunction(EventFactory){
     var EventIndexVM = this;
     this.events = EventFactory.query();
     this.newEvent = new EventFactory();
   }
-
   function EventShowControllerFunction(EventFactory, $stateParams){
     var EventShowVM = this;
     EventShowVM.event = EventFactory.get[{id: $stateParams.id}]

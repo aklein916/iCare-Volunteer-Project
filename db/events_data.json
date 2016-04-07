@@ -5,14 +5,14 @@
     "address": "128 M St NW, Washington, DC"},
 
   { "title" : "Skilled Volunteers Needed For Seniors",
-    "organizer": "AHC Inc.- Charter House",
-    "focus_area": "Seniors",
-    "address": "Silver Spring, 20910"},
+  "organizer": "AHC Inc.- Charter House",
+  "focus_area": "Seniors",
+  "address": "Silver Spring, 20910"},
 
   { "title": "Credit Union Cherry Blossom Ten Mile Run",
-    "organizer": "Credit Union Cherry Blossom Ten Mile Run",
-    "focus_area": "Children & Youth",
-    "address": "Washington Monument Grounds, Washington, DC 11111"},
+  "organizer": "Credit Union Cherry Blossom Ten Mile Run",
+  "focus_area": "Children & Youth",
+  "address": "Washington Monument Grounds, Washington, DC 11111"},
 
   { "title": "Seeking Mentors for National Youth Development Program",
   "organizer": "Community Preservation and Development Corporation",
@@ -20,8 +20,96 @@
   "address": "8403 Colesville Road, Suite 1150, SIlver Spring, Maryland 20910"},
 
   { "title": "Community Educator",
-    "organizer": "DC Rape Crisis Center",
-    "focus_area": "Advocacy and Human Rights",
-    "address": "DCRCC 5321 1st Place, NE, Washington, DC 20011"
-    }
+  "organizer": "DC Rape Crisis Center",
+  "focus_area": "Advocacy and Human Rights",
+  "address": "DCRCC 5321 1st Place, NE, Washington, DC 20011"
+  },
+
+  { "title":"LULAC",
+  "organizer":"LULAC",
+  "focus_area":"Health & Human Needs",
+  "description":"",
+  "start_date":"09/16/2016",
+  "end_date":"09/16/2016",
+  "start_time":"",
+  "end_time":"",
+  "address":"1919 Connecticut AveWashington, DC 200096"
+  },
+
+  { "title":"Econoworld 2016",
+  "organizer": "Econolodge",
+  "focus_area":"Economic Development",
+  "description": "",
+  "start_date": "05/06/2016",
+  "end_date": "05/06/2016",
+  "start_time": "",
+  "end_time": "",
+  "address": "2400 East Capitol Street SE,Washington, DC 20003"
+  },
+
+  { "title": "DC BBQ Battle",
+  "organizer": "Safeco",
+  "focus_area":"Advocacy & Human Rights",
+  "description":"",
+  "start_date":"10/10/15",
+  "end_date":"10/11/15",
+  "start_time":"",
+  "end_time":"",
+  "address":"5260 Western ave, chevy chase md 20815"
+  },
+
+  { "title": "Go Humans",
+  "organizer": "NoMa",
+  "focus_area": "Advocacy & Human Rights",
+  "description": "Pro Humans rights event",
+  "start_date": "5-Jul",
+  "end_date": "5-Jul",
+  "start_time":"",
+  "end_time": "",
+  "address": "3001 Connecticut Avenue NW",
+  },
+
+  { "title": "Zoofari",
+  "organizer": "Friends of the National Zoo",
+  "focus_area": "Animals",
+  "description": "Food, Drinks and the zoo... Always a good mix",
+  "start_date": "5/14/2016",
+  "end_date":"5/14/2016",
+  "start_time": "8:00pm",
+  "end_time": "11:00pm",
+  "address": "3001 Connecticut Avenue NW, Washington DC 20001"
+  },
+
+  { "title":"Thrive DC",
+  "organizer": "Thrive DC",
+  "focus_area":"Community Development",
+  "description": "THRIVE PEOPLE",
+  "start_date": "05/05/2016",
+  "end_date":"05/05/2016",
+  "start_time":"8:00pm",
+  "end_time":"9:00pm",
+  "address": "1525 Newton St NW, Washington, DC 20001"
+  },
+
+  { "title": "Oh Brother Fest",
+  "organizer": "Big Brother",
+  "focus_area": "Children & Youth",
+  "description": "FTK",
+  "start_date": "05/05/2016",
+  "end_date":  "05/05/2016",
+  "start_time": "8:00pm",
+  "end_time": "11:00pm",
+  "address": "1600 Connecticut Ave, Washington, DC 20001"
+  },
+
+  { "title": "DC Duck Race",
+  "organizer": "Rotary Club of Washington DC,20001",
+  "focus_area":"Community Development",
+  "description": "Run for the ducks",
+  "start_date": "10/01/2016",
+  "end_date":"10/01/2016",
+  "start_time": "8:00pm",
+  "end_time":"11:00pm",
+  "address":"355 Water St SE Washington, DC 20002"
+  }
 ]

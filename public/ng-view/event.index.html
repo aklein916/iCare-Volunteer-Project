@@ -53,8 +53,57 @@ p {
 <body id="home-body">
   <div id="home-content-box">
     <h1 id="home-header">WHAT DO YOU CARE ABOUT?</h1>
+
+    <p id="home-p">iCare about...</p>
+    <form>
+    What cause verbiage.....
+    <select data-ng-model="event.focus_area">
+        <option value="">
+        <option value="All">All
+        <option value="Advocacy & Human Rights">Advocacy & Human Rights
+        <option value="Animals">Animals
+        <option value="Arts & Culture">Arts & Culture
+        <option value="Children & Youth">Children & Youth
+        <option value="Community Development">Community Development
+        <option value="Economic Development">Economic Development
+        <option value="Education & Literacy">Education & Literacy
+        <option value="Environment & Sustainability">Environment & Sustainability
+        <option value="Health & Human Needs">Health & Human Needs
+        <option value="Military & Veterans">Military & Veterans
+        <option value="Public Safety & Emergency Preparedness">Public Safety & Emergency Preparedness
+        <option value="Seniors">Seniors
+        </select>
+        </form>
+
+          <div ng-switch="event.focus_area">
+            <div ng-switch-when="All">
+               <h1>All</h1>
+               <p>Welcome to a world of dogs.</p>
+            </div>
+            <div ng-switch-when="Advocacy & Human Rights">
+               <h1>"Advocacy & Human Rights"</h1>
+               <p>Learn from examples.</p>
+            </div>
+            <div ng-switch-when="cars">
+               <h1>Cars</h1>
+               <p>Read about cars.</p>
+            </div>
+          </div>
+
+          <p>The ng-switch directive hides and shows HTML sections depending on the value of the dropdown list.</p>
+
+
     <p>Find worthy causes in need of volunteers like you</p>
+
     <div class="well" data-event-form data-event="EventShowVM" data-form-method="edit"></div>
       <button type="button" class="btn btn-primary btn-block" data-ui-sref="eventShow">See All Events</a></button>
+  </div>
+</br>
+
+  <div id="home-content-box">
+    <h1 id="home-header">See stories</h1>
+    <p id="home-p">word!</p>
+
+        <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button>
   </div>
 </body>

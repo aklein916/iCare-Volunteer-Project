@@ -36,41 +36,41 @@ table {
   </div>
 
 <main data-ng-controller="event_index_controller as vm">
+
+<input type="text" class="form-control" placeholder="Search Events" data-ng-model="vm.filter_on" />
+<table class="table">
+
 <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
 <table class="table table-bordered">
+
   <thead>
     <tr>
       <td data-ng-click="vm.is_descending = !(vm.is_descending)">
-        <span data-ng-if="vm.is_descending">z-a</span>
         <span data-ng-if="vm.is_descending">a-z</span>
+        <span data-ng-if="vm.is_descending">z-a</span>
       </td>
-      <th data-ng-click="vm.sort_data_by('title')">Title</th>
-      <th data-ng-click="vm.sort_data_by('organizer')">Organizer</th>
-      <th data-ng-click="vm.sort_data_by('focus_area')">Category</th>
-      <th data-ng-click="vm.sort_data_by('start_date')">Start Date</th>
+      <th data-ng-click="vm.sort_data_by('event.title')">Event Name</th>
+      <th data-ng-click="vm.sort_data_by('event.organizer')">Organizer</th>
+      <th data-ng-click="vm.sort_data_by('event.focus_area')">Category</th>
+      <th data-ng-click="vm.sort_data_by('event.start_date')">Start Date</th>
+      <th data-ng-click="vm.sort_data_by('event.end_date')">End Date</th>
       <th></th>
     </tr>
   </thead>
-
   <tbody>
     <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
       <td></td>
-      <td colspan="2">
-        <input type="text" data-ng-model="event.title" placeholder="Name" />
+        <td>{{event.title}}</td>
+        <td>{{event.organizer}}</td>
+        <td>{{event.focus_area}}</td>
+        <td>{{event.start_date}}</td>
+        <td>{{event.end_date}}</td>
       </td>
-      <td>
-        <input type="text" data-ng-model="event.organizer" placeholder="Organizer" />
-      </td>
-      <td>
-        <input type="text" data-ng-model="event.focus_area" placeholder="Category" />
-      </td>
-      <td>
-        <input type="date" data-ng-model="event.start_date" placeholder="mm/dd/yyyy" />
-      </td>
-      <td data-ng-click="vm.create()">&plus;</td>
     </tr>
   </tbody>
+  </table>
 </main>
 </table>
 </body>
 </html>
+>>>>>>> cfdeaef655b55e4f6e1cd054a5bd56db3ca9364b
