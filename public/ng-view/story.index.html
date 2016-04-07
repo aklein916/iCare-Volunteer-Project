@@ -1,20 +1,65 @@
-  <header class="jumbotron">
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<style>
+
+ nav {
+  background-image: url(http://i.imgur.com/ffTo6t9.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  /*background-attachment: fixed;*/
+  background-size: cover;
+  height: 200px;
+  /*margin-bottom: 100px;*/
+}
+
+button {
+  color: black;
+  border: 1px solid #fff;
+  background-color: transparent;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Cinzel", serif;
+  font-size: 20pt;
+}
+
+img {
+  height: 250px;
+  width: 250px;
+}
+
+header {
+  padding-top: 30px;
+}
+
+/*img:nth-of-type(odd) {
+  justify-content: left;
+}*/
+
+</style>
+<body>
+  <header class="head">
+    <div data-ng-switch="storyForm">
+      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex">Tell Us What Inspires You!</button>
+    </div>
   </header>
+
   <input type="text" placeholder="search for stories" data-ng-model="search">
   <main data-ng-controller="story_index_controller as vm">
     <div data-ng-repeat="story in vm.stories | filter:search">
-      <h1>{{story.name}}</h1>
-      <p>{{story.age}}</p>
-      <p>{{story.cause}}<p>
-      <img data-ng-src="{{story.photo_url}}" alt="#" />
-      <p>{{story.story}}<p>
-    </div>
-  </main>
-  <footer class="foot">
-    <div ng-show="formType @ 'create()'">
-      <button type="button" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
-      </div>
-      <div ng-show="formMethod == 'storyForm'">
-          <button type= "button" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
+      <h1>Name: {{story.name}}</h1>
+      <p>Age: {{story.age}}</p>
+      <p>My Cause: {{story.cause}}<p>
+        <img class="img-circle" data-ng-src="{{story.photo_url}}" alt="#">
+        <p>Why I volunteer: {{story.story}}<p>
         </div>
-  </footer>
+      </main>
+    </body>
+    <footer class="foot">
+      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex">Tell Us What Inspires You!</button>
+    </footer>
+    </html>

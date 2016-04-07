@@ -1,6 +1,48 @@
+<!DOCTYPE html>
+<head>
+</head>
+
+<style>
+
+nav {
+  background-image: url(http://i.imgur.com/oivONQO.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 300px;
+}
+
+/*tbody tr:nth-of-type(odd) {
+  background-color: #f6dce1;
+}*/
+
+th {
+  color: #099C38;
+}
+
+main {
+  padding-top: 120px;
+}
+
+table {
+  border-color: black;
+}
+
+</style>
+
+<body>
+  <div class="dc-image-container">
+  </div>
+
 <main data-ng-controller="event_index_controller as vm">
+
 <input type="text" class="form-control" placeholder="Search Events" data-ng-model="vm.filter_on" />
 <table class="table">
+
+<input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
+<table class="table table-bordered">
+
   <thead>
     <tr>
       <td data-ng-click="vm.is_descending = !(vm.is_descending)">
@@ -28,3 +70,7 @@
   </tbody>
   </table>
 </main>
+</table>
+</body>
+</html>
+>>>>>>> cfdeaef655b55e4f6e1cd054a5bd56db3ca9364b

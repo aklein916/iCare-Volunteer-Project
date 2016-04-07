@@ -105,6 +105,7 @@
       vm.sort_on = name;
       vm.is_descending =!(vm.is_descending);
     }
+  return story;
   }
 
   function StoryIndexControllerFunction(StoryFactory){
