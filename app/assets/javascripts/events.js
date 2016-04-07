@@ -86,7 +86,7 @@
   function EventFactoryFunction($resource){
     var vm = this;
     var event =
-     $resource("http://localhost:3000/events/:id.json", {}, {
+     $resource("/events/:id.json", {}, {
       UPDATE: {method: "PUT"}
     });
     vm.data = event.query();
