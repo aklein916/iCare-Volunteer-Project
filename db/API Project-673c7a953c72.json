@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "api-project-760613663523",
+  "private_key_id": "673c7a953c72d7ff0965f9ecddfd0d717ac6f1f6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDMw9ulvanvGdJD\n7Sj66VXto6EFhfjj0baYTokVDOzBSXiDQcEG3hkwvcRSRMt6elbfIYHSmsYcJAx7\nwuXxri/k0BzgeBAAqrQodugcDTuldRcKxMusUBbJ9E4p4hytQTceX7MpMZbwTL3W\nZCat+P5hGDloicSaKQgECii7kuINlEuVv/Vwgsht9DOLP+Y157kMVfsDWbT1ekFS\nJnMs9oBZtY8TJYxoBX+REPNMpecHqfAinN8bbuhH5STmtl52zlzn5p8hHGwF8CvS\nxxMuBeh5pNRMbOHzEMSrXimVD6W+mybiNojIyvfUNie4xaPS5UHvy5LmIO0ZNGyo\nEUeHbg8hAgMBAAECggEBALK/fuyORtv8lHrLeuyd6G8MWjIyI3TsyxLl6/C+WabZ\ndiROsCxIkYDlB44xk9cVGOSroWKxzaMfLO6U0ppJTnHV4n9pD78lRSPVuQVT3++t\n6TFzXcDMITim1dzmD9aGiZEwRXv+WB7pPwb6YnGYXKdxuBuzuDZC/0ZXf/tOW5sx\necw6970LvvlGCc1zvbY4ViL2SQROyyjmjP6icKkLKJbQKcH/DeLJpJnkzfFpHCB3\nkqKb4IBr6Ij/Ov4zrcuhHk/DFjwWbsNNNVD57+VTUuEShHkW9+JTK0/1e3qr69xm\ns3GGtZ1tHYdD1SIIgGKDO9+hW5jy4fH6gChukiLMbmkCgYEA+6rxUjrAPukrfy5f\nQPAXv+fb0Z1WkL8W6jL3wPCSHvBI6dcAff1ASHFVz9cy92qeg3tSlUECWBs8Zlpj\n2gKcxgsLdPql2UaPTG4CM/K7k9Wzry5NzzYFkR2KgxumkS3zR+sGg1Y2bmkpdSq+\nRIbNZVC6E3ypp6myZFovt50Ma+8CgYEA0Eo5IKnvez1c0piwYDWvadQeLdNpX7Et\nH/OudlSTDcCNnyqeNwfRaoy9Bw+k1Njx4vlKwgH2CCyNhSF6+mAZGEb7VosbKM4F\nF8iTt6/n1zPhFSvjYDMMBHTvR6UT40df9mmGh+UIKzbVDDz5lpLbxfLNnEE6FGEt\nhZfDyOHAZe8CgYEAheRtXVU6gH3nEVPng5H44LWHQp8Vtg6kL1eMbk7PPryR3i7v\n6Re6gpAhmmEgkXdc/BC5YATlLWDYIpBGfW9UXxzzLHpJkC41APGqJF8oor9YSIQ3\nC13vWkRAM/6bALRUsVd98JQGg3lZgCeMcMLTNercBJAXZscmzLManfJk8GsCgYB0\nV2D9a64GSkoUn5C0zIfENuT8d7+94XrxA+2Izsisv8bbBrUEy+se9qmGziglc1/4\nhYJKR0ojWq9Zk0/bld2uf8dXma975UdW94P679gxjhrE9pS0YQ7vVllozT4EjxN8\n0YiBU15ytNffVBedET6MnIhYJN7KD1Wb7x8+j0omJQKBgHy55iOHxsRRx512pbBM\nLym8jF0HTIP2HANwQQFjDBZa1mLHCqkBkt19yCXOEbwRdbRakKoWkqjdlv4FRBOz\nkg//K15tZpq/sIfglAZCpI8J9rfy1cDjqH+sgLKsVAo2llIR2rU6qVJbTyERAlMs\niA+k6jOCT2jHLyxp/Dz0sbcv\n-----END PRIVATE KEY-----\n",
+  "client_email": "icare-375@api-project-760613663523.iam.gserviceaccount.com",
+  "client_id": "106074221292480160357",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/icare-375%40api-project-760613663523.iam.gserviceaccount.com"
+}

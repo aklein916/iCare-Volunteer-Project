@@ -96,13 +96,11 @@
     }
     return event;
   }
-
   function EventIndexControllerFunction(EventFactory){
     var EventIndexVM = this;
     this.events = EventFactory.query();
     this.newEvent = new EventFactory();
   }
-
   function EventShowControllerFunction(EventFactory, $stateParams){
     var EventShowVM = this;
     EventShowVM.event = EventFactory.get[{id: $stateParams.id}]
@@ -141,10 +139,9 @@
         formMethod: "@"
       },
       link: function(scope){
-        console.log('here')
         scope.create = function(){
-          scope.story.$save(scope.story, function(response){
-            $state.go("storyIndex", {}, {reload: true});
+          StoryFactory.save(scope.story, function(response){
+            StoryFactory.all.push(response);
           });
         }
       }
