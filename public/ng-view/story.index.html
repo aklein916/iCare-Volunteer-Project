@@ -43,23 +43,23 @@ main {
 </style>
 <body>
   <header class="head">
-    <div ng-show="formType @ 'create()'">
-      <button type="button" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
-    </div>
-    <div ng-show="formMethod == 'storyForm'">
-      <button type= "button" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
+    <div data-ng-switch="storyForm">
+      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex">Tell Us What Inspires You!</button>
     </div>
   </header>
 
   <input type="text" placeholder="search for stories" data-ng-model="search">
   <main data-ng-controller="story_index_controller as vm">
     <div data-ng-repeat="story in vm.stories | filter:search">
-      <h1>{{story.name}}</h1>
-      <p>{{story.age}}</p>
-      <p>{{story.cause}}<p>
+      <h1>Name: {{story.name}}</h1>
+      <p>Age: {{story.age}}</p>
+      <p>My Cause: {{story.cause}}<p>
         <img class="img-circle" data-ng-src="{{story.photo_url}}" alt="#">
-        <p>{{story.story}}<p>
+        <p>Why I volunteer: {{story.story}}<p>
         </div>
       </main>
     </body>
+    <footer class="foot">
+      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex">Tell Us What Inspires You!</button>
+    </footer>
     </html>
