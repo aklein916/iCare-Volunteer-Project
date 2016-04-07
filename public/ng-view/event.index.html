@@ -13,6 +13,10 @@
     text-align: center;
   }
 
+  .intro-section {
+    padding-top: 60px;
+  }
+
   h1 {
     color: white;
     font-family: "Raleway", sans-serif;
@@ -49,10 +53,13 @@
     color: white;
   }
 
+  .btn-primary:hover {
+    background-color: #099C38;
+
   .btn {
     text-align: center;
     vertical-align: middle;
-    margin-bottom: 0;
+    margin: 0px auto;
     position: absolute;
     justify-content: center;
   }
@@ -61,7 +68,7 @@
 
 
   <body>
-    <div>
+    <div class="intro-section">
       <h1>WHAT DO YOU CARE ABOUT?</h1>
       <p id="home-p">iCare about...</p>
       <form>
@@ -101,7 +108,7 @@
                                   <p>Find worthy causes in need of volunteers like you</p>
 
                                   <!-- <div class="well" data-event-form data-event="EventShowVM" data-form-method="edit"></div> -->
-                                  <button type="button" class="btn btn-primary btn-block" data-ui-sref="eventShow">See All Events</a></button>
+                                  <button type="button" class="btn btn-primary center-block" data-ui-sref="eventShow">See All Events</a></button>
                                 </div>
                               </br>
                               <!-- <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button> -->
