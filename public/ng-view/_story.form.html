@@ -1,0 +1,29 @@
+<div>
+<div data-ng-switch="formMethod">
+  <h2 data-ng-switch-default>Add your Story</h2>
+</div>
+<h1>Tell Us Your Story!</h1>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.name" id="name" />
+  <label for="name">Name</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="integer" class="form-control" data-ng-model="story.age" id="age" />
+  <label for="age">Age</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.cause" id="cause" />
+  <label for="cause">My Cause</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.photo_url" id="photo_url" />
+  <label for="photo_url">Photo URL</label>
+</fieldset>
+<fieldset class="input-group">
+  <input type="text" class="form-control" data-ng-model="story.story" id="story" />
+  <label for="story">My Story</label>
+</fieldset>
+<div data-ng-switch="formMethod">
+  <button data-ng-switch-default type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>
+</div>
+</div>
