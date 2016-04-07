@@ -5,21 +5,71 @@
 
 <style>
 
- nav {
-  background-image: url(http://i.imgur.com/ffTo6t9.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  /*background-attachment: fixed;*/
-  background-size: cover;
-  height: 200px;
-  /*margin-bottom: 100px;*/
+.container {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
 }
 
-button {
-  color: black;
+.volunteer-image-container {
+  background-image: url(http://i.imgur.com/MQrtZSG.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 250px;
+}
+
+.over-image-h1 {
+  color: #FFFF68;
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: relative;
+  padding-top: 70px;
+}
+
+.over-image-h2 {
+  color: #FFFF68;
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: relative;
+}
+
+.btn-block {
+  display: block;
+  width: 200px;
+}
+
+.btn-primary {
+  color: #fff;
   border: 1px solid #fff;
   background-color: transparent;
+}
+
+.btn-primary:active {
+  color: white;
+}
+
+.btn {
   text-align: center;
+  vertical-align: middle;
+  margin-bottom: 0;
+  position: absolute;
+  justify-content: center;
 }
 
 h1 {
@@ -32,8 +82,9 @@ img {
   width: 250px;
 }
 
-header {
-  padding-top: 30px;
+main {
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 /*img:nth-of-type(odd) {
@@ -41,12 +92,15 @@ header {
 }*/
 
 </style>
+
 <body>
-  <header class="head">
+  <div class="volunteer-image-container">
+    <h1 class="over-image-h1">Need Inspiration?</h1>
+    <h2 class="over-image-h2">Check out how volunteering has impacted other volunteers like you</h2>
     <div data-ng-switch="storyForm">
       <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
     </div>
-  </header>
+</div>
 
   <input type="text" placeholder="search for stories" data-ng-model="search">
   <main data-ng-controller="story_index_controller as vm">
