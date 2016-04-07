@@ -139,10 +139,9 @@
         formMethod: "@"
       },
       link: function(scope){
-        console.log('here')
         scope.create = function(){
-          scope.story.$save(scope.story, function(response){
-            $state.go("storyIndex", {}, {reload: true});
+          StoryFactory.save(scope.story, function(response){
+            StoryFactory.all.push(response);
           });
         }
       }
