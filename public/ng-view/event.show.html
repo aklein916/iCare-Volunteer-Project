@@ -74,14 +74,13 @@ table {
 
 <main data-ng-controller="event_index_controller as vm">
 
-<input type="text" class="form-control" placeholder="Search Events" data-ng-model="vm.filter_on" />
-<table class="table">
 
-<input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
+<table class="table">
 <table class="table table-bordered">
 
   <thead>
     <tr>
+      <input type="text" class="form-control" placeholder="Search Events" data-ng-model="vm.filter_on" />
       <td data-ng-click="vm.is_descending = !(vm.is_descending)">
         <span data-ng-if="vm.is_descending">a-z</span>
         <span data-ng-if="vm.is_descending">z-a</span>
