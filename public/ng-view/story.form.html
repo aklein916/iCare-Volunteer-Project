@@ -1,4 +1,4 @@
-<h1>Add your story</h1>
+<h1>Tell Us Your Story!</h1>
 <fieldset class="input-group">
   <input type="text" class="form-control" data-ng-model="story.name" id="name" />
   <label for="name">Name</label>
@@ -9,7 +9,7 @@
 </fieldset>
 <fieldset class="input-group">
   <input type="text" class="form-control" data-ng-model="story.cause" id="cause" />
-  <label for="cause">Cause</label>
+  <label for="cause">My Cause</label>
 </fieldset>
 <fieldset class="input-group">
   <input type="text" class="form-control" data-ng-model="story.photo_url" id="photo_url" />
@@ -17,6 +17,6 @@
 </fieldset>
 <fieldset class="input-group">
   <input type="text" class="form-control" data-ng-model="story.story" id="story" />
-  <label for="story">Your Story</label>
+  <label for="story">My Story</label>
 </fieldset>
-<button type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>
+<button type="button" class="btn btn-primary btn-block" data-ng-click="vm.create()">Submit</button>

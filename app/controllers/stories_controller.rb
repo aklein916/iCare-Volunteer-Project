@@ -13,7 +13,7 @@ class StoriesController < ApplicationController
   end
 
   def create
-    @story = Story.new(story_params)
+    @story = Story.create!(story_params)
 
     if @story.save
       render status: 200, json: @stories

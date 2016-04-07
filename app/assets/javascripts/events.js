@@ -99,20 +99,18 @@
   };
 
   function StoryFactoryFunction($resource){
-    return $resource("http://localhost:3000/stories/:id.json", {}, {
+    var StoryFactory =
+    $resource("http://localhost:3000/stories/:id.json", {}, {
       update: {method: "PUT"}
     });
-    vm.data = story.query();
-    vm.sort_data_by = function(name){
-      vm.sort_on = name;
-      vm.is_descending =!(vm.is_descending);
-    }
+    StoryFactory.all = StoryFactory.query();
+    return StoryFactory;
   }
 
   function StoryIndexControllerFunction(StoryFactory){
     var StoryIndexVM = this;
-    this.stories = StoryFactory.query();
-    this.newStory = new StoryFactory();
+    StoryIndexVM.stories = StoryFactory.all;
+    StoryIndexVM.newStoryFactory = new StoryFactory();
   }
 
   function StoryShowControllerFunction(StoryFactory, $stateParams){
