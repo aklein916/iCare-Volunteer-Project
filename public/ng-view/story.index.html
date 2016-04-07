@@ -26,7 +26,7 @@
   color: white;
   font-family: "Raleway", sans-serif;
   font-size: 50px;
-  font-weight: normal;
+  font-weight: bolder;
   text-align: center;
   top: 0;
   bottom: 0;
@@ -64,13 +64,17 @@
   color: white;
 }
 
-.btn {
+.btn-primary:hover {
+  background-color: #099C38;
+}
+
+/*.btn {
   text-align: center;
   vertical-align: middle;
   margin-bottom: 0;
   position: absolute;
   justify-content: center;
-}
+}*/
 
 h1 {
   font-family: "Cinzel", serif;
@@ -98,7 +102,7 @@ main {
     <h1 class="over-image-h1">Need Inspiration?</h1>
     <h2 class="over-image-h2">Check out how volunteering has impacted other volunteers like you</h2>
     <div data-ng-switch="storyForm">
-      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
+      <button type="button" class="btn btn-primary center-block" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
     </div>
 </div>
 
@@ -114,6 +118,6 @@ main {
       </main>
     </body>
     <footer class="foot">
-      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
+      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyForm">Tell Us What Inspires You</button>
     </footer>
     </html>
