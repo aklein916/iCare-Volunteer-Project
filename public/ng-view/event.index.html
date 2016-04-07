@@ -14,7 +14,7 @@
   }
 
   .intro-section {
-    padding-top: 60px;
+    padding-top: 80px;
   }
 
   h1 {
@@ -28,7 +28,7 @@
   #home-p {
     color: white;
     font-family: "Quicksand", sans-serif;
-    font-size: 20px;
+    font-size: 30px;
   }
 
   p {
@@ -69,8 +69,11 @@
 
   <body>
     <div class="intro-section">
-<h1>Find worthy causes in need of volunteers like you</h1>
-      <select data-ng-model="events" data-ng-options="event.focus_area" data-ui-sref="eventShow">
+      <h1> WHAT DO YOU CARE ABOUT?</h1>
+      <p id= "home-p"> iCare about...</p>
+        <form>
+
+      <select data-ng-model="events" data-ng-options="event.focus_area" >
         <option value="">
         <option value="All">All
         <option value="Advocacy & Human Rights">Advocacy & Human Rights
@@ -87,15 +90,10 @@
         <option value="Seniors">Seniors
       </select>
     </form>
+<p>Find worthy causes in need of volunteers like you</p>
 
-
-
-
-                                  <!-- <div class="well" data-event-form data-event="EventShowVM" data-form-method="edit"></div> -->
-                                  <!-- <button type="button" class="btn btn-primary center-block" data-ui-sref="eventShow">See All Events</a></button> -->
-                                </div>
-                              </br>
-                              <button type="button" class="btn btn-primary center-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button>
-                            </div>
-                          </body>
-                          </html>
+      </br>
+      <button type="button" class="btn btn-primary center-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button>
+    </div>
+  </body>
+</html>
