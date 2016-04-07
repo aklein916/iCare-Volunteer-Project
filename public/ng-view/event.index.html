@@ -1,6 +1,6 @@
 <!DOCTYPE html >
 <html>
-<head>
+<head></head>
   <title></title>
   <style>
 
@@ -21,9 +21,17 @@
     padding-top: 250px;
   }
 
+  #home-p {
+    color: white;
+    font-family: "Quicksand", sans-serif;
+    font-size: 20px;
+  }
+
   p {
     font-family: "Quicksand", sans-serif;
     color: white;
+    font-size: 25px;
+    /*padding-top: 20px;*/
   }
 
   .btn-block {
@@ -57,7 +65,6 @@
       <h1>WHAT DO YOU CARE ABOUT?</h1>
       <p id="home-p">iCare about...</p>
       <form>
-        What cause verbiage.....
         <select data-ng-model="event.focus_area">
           <option value="">
             <option value="All">All
@@ -91,17 +98,13 @@
                                     </div>
                                   </div>
 
-                                  <p>The ng-switch directive hides and shows HTML sections depending on the value of the dropdown list.</p>
-
-
-
                                   <p>Find worthy causes in need of volunteers like you</p>
 
-                                  <div class="well" data-event-form data-event="EventShowVM" data-form-method="edit"></div>
+                                  <!-- <div class="well" data-event-form data-event="EventShowVM" data-form-method="edit"></div> -->
                                   <button type="button" class="btn btn-primary btn-block" data-ui-sref="eventShow">See All Events</a></button>
                                 </div>
                               </br>
-
-                              <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button>
+                              <!-- <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button> -->
                             </div>
                           </body>
+                          </html>

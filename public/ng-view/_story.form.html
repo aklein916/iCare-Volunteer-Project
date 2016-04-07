@@ -1,29 +1,113 @@
-<div>
-<div data-ng-switch="formMethod">
-  <h2 data-ng-switch-default>Add your Story</h2>
-</div>
-<h1>Tell Us Your Story!</h1>
-<fieldset class="input-group">
-  <label for="name">Name</label>
-  <input type="text" class="form-control" data-ng-model="story.name" id="name" />
-</fieldset>
-<fieldset class="input-group">
-  <label for="age">Age</label>
-  <input type="integer" class="form-control" data-ng-model="story.age" id="age" />
-</fieldset>
-<fieldset class="input-group">
-  <label for="cause">My Cause</label>
-  <input type="text" class="form-control" data-ng-model="story.cause" id="cause" />
-</fieldset>
-<fieldset class="input-group">
-  <label for="photo_url">Photo URL</label>
-  <input type="text" class="form-control" data-ng-model="story.photo_url" id="photo_url" />
-</fieldset>
-<fieldset class="input-group">
-  <label for="story">My Story</label>
-  <input type="text" class="form-control" data-ng-model="story.story" id="story" />
-</fieldset>
-<div data-ng-switch="formMethod">
-  <button data-ng-switch-default type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>
-</div>
-</div>
+<!DOCTYPE html>
+<html>
+<style>
+
+.container {
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.form-image-container {
+  background-image: url(http://i.imgur.com/uKLrcrK.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 250px;
+}
+
+h1 {
+  color: white;
+  font-family: "Raleway", sans-serif;
+  font-size: 50px;
+  font-weight: normal;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: relative;
+  padding-top: 70px;
+}
+
+h2 {
+  color: white;
+  font-family: "Quicksand", sans-serif;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  position: relative;
+}
+
+.input-group {
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
+}
+
+.btn-block {
+  display: block;
+  width: 200px;
+  padding-top: 5px;
+}
+
+.btn-primary {
+  color: #09C238;
+  border: 1px solid #09C238;
+  background-color: transparent;
+}
+
+.btn-primary:active {
+  color: white;
+  background-color: #09C238;
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  justify-content: center;
+  padding-top: 10px;
+}
+
+</style>
+<body>
+  <div class="form-image-container">
+
+
+    <div data-ng-switch="formMethod">
+      <h1 data-ng-switch-default>What Inspires You?</h1>
+    </div>
+    <h2>Tell Us Your Story By Completing the Form Below</h2>
+  </div>
+  <fieldset class="input-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" data-ng-model="story.name" id="name" />
+  </fieldset>
+  <fieldset class="input-group">
+    <label for="age">Age</label>
+    <input type="integer" class="form-control" data-ng-model="story.age" id="age" />
+  </fieldset>
+  <fieldset class="input-group">
+    <label for="cause">My Cause</label>
+    <input type="text" class="form-control" data-ng-model="story.cause" id="cause" />
+  </fieldset>
+  <fieldset class="input-group">
+    <label for="photo_url">Photo URL</label>
+    <input type="text" class="form-control" data-ng-model="story.photo_url" id="photo_url" />
+  </fieldset>
+  <fieldset class="input-group">
+    <label for="story">My Story</label>
+    <input type="text" class="form-control" data-ng-model="story.story" id="story" />
+  </fieldset>
+  <div data-ng-switch="formMethod">
+    <button data-ng-switch-default type="button" class="btn btn-primary btn-block" data-ng-click="create()">Submit</button>
+  </div>
+</body>
+</html>
