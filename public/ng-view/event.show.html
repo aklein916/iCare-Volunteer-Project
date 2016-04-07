@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <head>
 </head>
@@ -13,20 +12,23 @@ body {
   background-size: cover;
 }
 
-tbody tr:nth-of-type(odd) {
+/*tbody tr:nth-of-type(odd) {
   background-color: #f6dce1;
+}*/
+
+th {
+  color: white;
 }
+
 </style>
 
 <body>
   <div class="dc-image-container">
   </div>
 
-=======
 <main data-ng-controller="event_index_controller as vm">
->>>>>>> 076b635b4b6765c67e47b016634e1733390a74f7
 <input type="text" class="form-control" placeholder="Filter on..." data-ng-model="vm.filter_on" />
-<table class="table table-striped">
+<table class="table table-bordered">
   <thead>
     <tr>
       <td data-ng-click="vm.is_descending = !(vm.is_descending)">
