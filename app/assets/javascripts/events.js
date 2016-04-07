@@ -107,7 +107,7 @@
   };
 
   function StoryFactoryFunction($resource){
-    return $resource("http://localhost:3000/stories/:id.json", {}, {
+    return $resource("/stories/:id.json", {}, {
       update: {method: "PUT"}
     });
     vm.data = story.query();
