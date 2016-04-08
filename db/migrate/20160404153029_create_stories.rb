@@ -3,7 +3,7 @@ class CreateStories < ActiveRecord::Migration
     create_table :stories do |t|
       t.string :name
       t.integer :age
-      t.string :story
+      t.string :volstory
       t.string :cause
       t.string :photo_url
       t.timestamps null: false

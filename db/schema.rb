@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20160404153029) do
   create_table "stories", force: :cascade do |t|
     t.string   "name"
     t.integer  "age"
-    t.string   "story"
+    t.string   "volstory"
     t.string   "cause"
     t.string   "photo_url"
     t.datetime "created_at", null: false
