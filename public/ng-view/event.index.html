@@ -71,26 +71,25 @@
     <div class="intro-section">
       <h1> WHAT DO YOU CARE ABOUT?</h1>
       <p id= "home-p"> iCare about...</p>
-        <form>
-
-      <select data-ng-model="events" data-ng-options="event.focus_area" >
-        <option value="">
-        <option value="All">All
-        <option value="Advocacy & Human Rights">Advocacy & Human Rights
-        <option value="Animals">Animals
-        <option value="Arts & Culture">Arts & Culture
-        <option value="Children & Youth">Children & Youth
-        <option value="Community Development">Community Development
-        <option value="Economic Development">Economic Development
-        <option value="Education & Literacy">Education & Literacy
-        <option value="Environment & Sustainability">Environment & Sustainability
-        <option value="Health & Human Needs">Health & Human Needs
-        <option value="Military & Veterans">Military & Veterans
-        <option value="Public Safety & Emergency Preparedness">Public Safety & Emergency Preparedness
-        <option value="Seniors">Seniors
-      </select>
-    </form>
-<p>Find worthy causes in need of volunteers like you</p>
+      <form>
+        <select data-ng-model="events" data-ng-change="changeUrl(events)"data-ng-options="event.focus_area" >
+          <option value="">
+          <option value="All">All
+          <option value="Advocacy & Human Rights">Advocacy & Human Rights
+          <option value="Animals">Animals
+          <option value="Arts & Culture">Arts & Culture
+          <option value="Children & Youth">Children & Youth
+          <option value="Community Development">Community Development
+          <option value="Economic Development">Economic Development
+          <option value="Education & Literacy">Education & Literacy
+          <option value="Environment & Sustainability">Environment & Sustainability
+          <option value="Health & Human Needs">Health & Human Needs
+          <option value="Military & Veterans">Military & Veterans
+          <option value="Public Safety & Emergency Preparedness">Public Safety & Emergency Preparedness
+          <option value="Seniors">Seniors
+          </select>
+        </form>
+        <p>Find worthy causes in need of volunteers like you</p>
 
       </br>
       <button type="button" class="btn btn-primary center-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button>
