@@ -1,4 +1,4 @@
-class EventsController < ApplicationController
+class HomeController < ApplicationController
 
   def index
     @events = Event.all

@@ -14,6 +14,7 @@
         <span data-ng-if="vm.is_descending">a-z</span>
         <span data-ng-if="vm.is_descending">z-a</span>
       </td>
+      <th data-ng-click="vm.sort_data_by('event.id')"></th>
       <th data-ng-click="vm.sort_data_by('event.title')">Event Name</th>
       <th data-ng-click="vm.sort_data_by('event.organizer')">Organizer</th>
       <th data-ng-click="vm.sort_data_by('event.focus_area')">Category</th>
@@ -25,6 +26,7 @@
   <tbody>
     <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
       <td></td>
+        <td><button><a href="events/{{event.id}}">View Event Details</a></button></td>
         <td>{{event.title}}</td>
         <td>{{event.organizer}}</td>
         <td>{{event.focus_area}}</td>
