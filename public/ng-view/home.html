@@ -3,9 +3,8 @@
   <div class="intro-section">
     <h1> WHAT DO YOU CARE ABOUT?</h1>
     <p id= "home-p"> iCare about...</p>
-      <form>
-
-    <select data-ng-model="events" data-ng-options="event.focus_area" >
+  <form>
+    <select data-ng-model="events" data-ng-options="event.focus_area" data-ui-sref="eventIndex">
       <option value="">
       <option value="All">All
       <option value="Advocacy & Human Rights">Advocacy & Human Rights
@@ -25,6 +24,7 @@
 </br>
 <p>See the stories of caring volunteers</p>
     </br>
-    <button type="button" class="btn btn-primary center-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button>
+    <button type="button" class="btn btn-primary center-block" a data-ui-sref="storyIndex" href="#">See All Stories</a></button>
   </div>
 </section>
+<a data-ui-sref="storyIndex" href="#">STORIES</a>

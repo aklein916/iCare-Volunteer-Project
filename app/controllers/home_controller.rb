@@ -7,5 +7,4 @@ class EventsController < ApplicationController
       format.json{ render status: 200, json: @events }
     end
   end
-
 end

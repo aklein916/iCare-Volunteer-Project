@@ -61,7 +61,7 @@
     .state("home", {
       url: "",
       templateUrl: "ng-view/home.html",
-      controller: "home_controller",
+      // controller: "home_controller",
       controllerAs: "HomeVM"
     })
     .state("eventIndex", {
