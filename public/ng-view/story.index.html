@@ -1,110 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-</head>
-
-<style>
-
-.container {
-  width: 100%;
-  padding-right: 0px;
-  padding-left: 0px;
-  margin-right: 0px;
-  margin-left: 0px;
-}
-
-.volunteer-image-container {
-  background-image: url(//i.imgur.com/MQrtZSG.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  height: 250px;
-}
-
-.over-image-h1 {
-  color: white;
-  font-family: "Raleway", sans-serif;
-  font-size: 50px;
-  font-weight: bolder;
-  text-align: center;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: relative;
-  padding-top: 70px;
-}
-
-.over-image-h2 {
-  color: white;
-  font-family: "Quicksand", sans-serif;
-  font-size: 30px;
-  font-weight: normal;
-  text-align: center;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  position: relative;
-}
-
-.btn-block {
-  display: block;
-  width: 200px;
-}
-
-.btn-primary {
-  color: white;
-  border: 1px solid white;
-  background-color: transparent;
-}
-
-.btn-primary:active {
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #099C38;
-}
-
-/*.btn {
-  text-align: center;
-  vertical-align: middle;
-  margin-bottom: 0;
-  position: absolute;
-  justify-content: center;
-}*/
-
-h1 {
-  font-family: "Cinzel", serif;
-  font-size: 20pt;
-}
-
-img {
-  height: 250px;
-  width: 250px;
-}
-
-main {
-  padding-left: 15px;
-  padding-right: 15px;
-}
-
-/*img:nth-of-type(odd) {
-  justify-content: left;
-}*/
-
-</style>
-
-<body>
+<section id="storyindex">
   <div class="volunteer-image-container">
     <h1 class="over-image-h1">Need Inspiration?</h1>
     <h2 class="over-image-h2">Check out how volunteering has impacted other volunteers like you</h2>
     <div data-ng-switch="storyForm">
       <button type="button" class="btn btn-primary center-block" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
     </div>
-</div>
+  </div>
 
   <input type="text" placeholder="search for stories" data-ng-model="search">
   <main data-ng-controller="story_index_controller as vm">
@@ -120,4 +21,4 @@ main {
     <footer class="foot">
       <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyForm">Tell Us What Inspires You</button>
     </footer>
-    </html>
+  </section>
