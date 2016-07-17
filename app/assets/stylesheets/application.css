@@ -1,31 +1,338 @@
 /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_self
+*= require_self
  */
-* {
-  box-sizing: border-box;
-}
+ * {
+   box-sizing: border-box;
+ }
 
-header {
-  margin-top:100px;
-}
+ header {
+   margin-top:100px;
+ }
+ .nav {
+     padding-left: 0;
+     margin-bottom: 0;
+     list-style: none;
+ }
+ .nav> li {
+     position: relative;
+     display: block;
+ }
 
-/*#home-content-box {
-  background-color: rgba(255,255,255,0.7);
-  width: 780px;
-  height: 165px;
-  text-align: center;
-  margin: 0 auto;
-  padding-top: 8px;
-  border: 2px solid black;
-}*/
+ nav {
+   background-color: #099C38;
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 50px;
+    width: 100%;
+  	z-index: 1;
+  	display: inline-block;
+  }
+
+  nav li {
+    float: right;
+    display: inline-block;
+    padding-right: 22px;
+    padding-top: 15px;
+    font-size: 15px;
+  }
+
+  .nav > li > a{
+  color: #fff;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 15pt;
+  background-color: transparent;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  }
+  .nav > li > a:hover {
+    background-color: transparent;
+    color: navy;
+  }
+  .nav > li > a:active {
+    background-color: transparent;
+    color: navy;
+  }
+  .nav > li > a:after {
+    background-color: transparent;
+    color: navy;
+  }
+  .nav> li> a:hover, .nav> li> a:focus {
+      text-decoration: none;
+      background-color: transparent;
+  }
+
+  #eventindex {
+    background-image: url(//i.imgur.com/ENvDzQX.jpg);
+    /*background-position: center;*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center;
+    height:800px;
+  }
+
+  #eventindex .intro-section {
+    padding-top: 80px;
+  }
+
+  #eventindex h1 {
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 30pt;
+    font-weight: bold;
+    padding-top: 250px;
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  #eventindex #home-p {
+    color: #fff;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  #eventindex p {
+    font-family: "Quicksand", sans-serif;
+    color: #fff;
+    font-size: 25px;
+    text-shadow: 1px 1px 1px #000;
+  }
+
+  #eventindex .btn-block {
+    display: block;
+    width: 200px;
+  }
+
+  #eventindex .btn-primary {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #099C38;
+  }
+
+  #eventindex .btn-primary:active {
+    color: #099C38;
+    background-color: #fff;
+    border: 1px solid #099C38;
+  }
+
+  #eventindex .btn-primary:hover {
+    background-color: #fff;
+    color: #099C38;
+    border: 1px solid #099C38;
+ }
+  #eventshow .container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  #eventshow .dc-image-container {
+    background-image: url(//i.imgur.com/oivONQO.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 250px;
+  }
+
+  #eventshow h1 {
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: relative;
+    padding-top: 70px;
+  }
+
+  #eventshow h2 {
+    color: #fff;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: relative;
+  }
+
+  #eventshow th {
+    color: #099C38;
+  }
+
+  #eventshow table {
+    /*border-color: black;*/
+  }
+
+  #storyindex .container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  #storyindex .volunteer-image-container {
+    background-image: url(//i.imgur.com/MQrtZSG.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+  }
+
+  #storyindex .over-image-h1 {
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    font-size: 50px;
+    font-weight: bolder;
+    text-align: center;
+    text-shadow: 1px 1px 1px #000;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: relative;
+    padding-top: 70px;
+  }
+
+  #storyindex .over-image-h2 {
+    color: #fff;
+    font-family: "Quicksand", sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;text-shadow: 1px 1px 1px #000;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: relative;
+  }
+
+  #storyindex .btn-block {
+    vertical-align: bottom;
+    display: block;
+    width: 200px;
+    padding-top: 5px;
+  }
+
+  #storyindex .btn-primary {
+    color: #fff;
+    border: 1px solid #fff;
+    background-color: #099C38;
+  }
+
+  #storyindex .btn-primary:active {
+    color: #099C38;
+    background-color: #fff;
+    border: 1px solid #099C38;
+  }
+
+  #storyindex .btn-primary:hover {
+    background-color: #fff;
+    color: #099C38;
+    border: 1px solid #099C38;
+  }
+
+  #storyindex h1 {
+    background-color: transparent;
+    font-size: 20pt;
+  }
+
+  #storyindex img {
+    height: 250px;
+    width: 250px;
+    border: 1px solid #000;
+  }
+  #storyindex p{
+    font-family: "Quicksand", sans-serif;
+  }
+  #storyindex main {
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 25px;
+  }
+
+  #storyform .container {
+    width: 100%;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  #storyform .form-image-container {
+    background-image: url(//i.imgur.com/uKLrcrK.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 250px;
+    width: 100%;
+  }
+
+  #storyform h1 {
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 50px;
+    font-weight: normal;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: relative;
+    padding-top: 70px;
+  }
+
+  #storyform h2 {
+    color: #fff;
+    font-family: "Quicksand", sans-serif;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: relative;
+  }
+
+  #storyform .input-group {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+  }
+
+  #storyform .btn-block {
+    display: block;
+    width: 200px;
+    padding-top: 5px;
+  }
+
+  #storyform .btn-primary {
+    color: #09C238;
+    border: 1px solid #09C238;
+    background-color: transparent;
+  }
+
+  #storyform .btn-primary:hover {
+    color: #fff;
+    background-color: #09C238;
+}
+  .space {
+    margin: 25px;
+  }
