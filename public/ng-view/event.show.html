@@ -1,3 +1,17 @@
 <section id="eventshow">
-  event show
+    <main data-ui-view></main>
+  <main data-ng-controller="event_show_controller as vm">
+    <div data-ng-repeat="event in vm.events | filter:search">
+      <h2>{{EventShowVM.event.title}}</h2>
+      <p>{{EventShowVM.event.title}}</p>
+      <p>{{EventShowVM.event.organizer}}</p>
+      <p>{{EventShowVM.event.focus_area}}</p>
+      <p>{{EventShowVM.event.description}}</p>
+      <p>{{EventShowVM.event.start_date}}</p>
+      <p>{{EventShowVM.event.end_date}}</p>
+      <p>{{EventShowVM.event.start_time}}</p>
+      <p>{{EventShowVM.event.end_time}}</p>
+      <p>{{EventShowVM.event.address}}</p>
+    </div>
+  </main>
 </section>
