@@ -63,7 +63,7 @@
       background-color: transparent;
   }
 
-  #eventindex {
+  #home {
     background-image: url(//i.imgur.com/ENvDzQX.jpg);
     /*background-position: center;*/
     background-repeat: no-repeat;
@@ -73,11 +73,11 @@
     height:800px;
   }
 
-  #eventindex .intro-section {
+  #home .intro-section {
     padding-top: 80px;
   }
 
-  #eventindex h1 {
+  #home h1 {
     color: #fff;
     font-family: "Raleway", sans-serif;
     font-size: 30pt;
@@ -86,43 +86,43 @@
     text-shadow: 1px 1px 1px #000;
   }
 
-  #eventindex #home-p {
+  #home #home-p {
     color: #fff;
     font-family: "Quicksand", sans-serif;
     font-size: 30px;
     text-shadow: 1px 1px 1px #000;
   }
 
-  #eventindex p {
+  #home p {
     font-family: "Quicksand", sans-serif;
     color: #fff;
     font-size: 25px;
     text-shadow: 1px 1px 1px #000;
   }
 
-  #eventindex .btn-block {
+  #home .btn-block {
     display: block;
     width: 200px;
   }
 
-  #eventindex .btn-primary {
+  #home .btn-primary {
     color: #fff;
     border: 1px solid #fff;
     background-color: #099C38;
   }
 
-  #eventindex .btn-primary:active {
+  #home .btn-primary:active {
     color: #099C38;
     background-color: #fff;
     border: 1px solid #099C38;
   }
 
-  #eventindex .btn-primary:hover {
+  #home .btn-primary:hover {
     background-color: #fff;
     color: #099C38;
     border: 1px solid #099C38;
  }
-  #eventshow .container {
+  #eventindex .container {
     width: 100%;
     padding-right: 0px;
     padding-left: 0px;
@@ -130,7 +130,7 @@
     margin-left: 0px;
   }
 
-  #eventshow .dc-image-container {
+  #eventindex .dc-image-container {
     background-image: url(//i.imgur.com/oivONQO.jpg);
     background-position: center;
     background-repeat: no-repeat;
@@ -139,7 +139,7 @@
     height: 250px;
   }
 
-  #eventshow h1 {
+  #eventindex h1 {
     color: #fff;
     font-family: "Raleway", sans-serif;
     font-size: 50px;
@@ -153,7 +153,7 @@
     padding-top: 70px;
   }
 
-  #eventshow h2 {
+  #eventindex h2 {
     color: #fff;
     font-family: "Quicksand", sans-serif;
     font-size: 30px;
@@ -166,11 +166,11 @@
     position: relative;
   }
 
-  #eventshow th {
+  #eventindex th {
     color: #099C38;
   }
 
-  #eventshow table {
+  #eventindex table {
     /*border-color: black;*/
   }
 

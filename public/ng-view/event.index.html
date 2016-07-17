@@ -1,28 +1,39 @@
 <section id="eventindex">
-  <div class="intro-section">
-    <h1> WHAT DO YOU CARE ABOUT?</h1>
-    <p id= "home-p"> iCare about...</p>
-      <form>
-
-    <select data-ng-model="events" data-ng-options="event.focus_area" >
-      <option value="">
-      <option value="All">All
-      <option value="Advocacy & Human Rights">Advocacy & Human Rights
-      <option value="Animals">Animals
-      <option value="Arts & Culture">Arts & Culture
-      <option value="Children & Youth">Children & Youth
-      <option value="Community Development">Community Development
-      <option value="Economic Development">Economic Development
-      <option value="Education & Literacy">Education & Literacy
-      <option value="Environment & Sustainability">Environment & Sustainability
-      <option value="Health & Human Needs">Health & Human Needs
-      <option value="Military & Veterans">Military & Veterans
-      <option value="Public Safety & Emergency Preparedness">Public Safety & Emergency Preparedness
-      <option value="Seniors">Seniors
-    </select>
-  </form>
-<p>Find worthy causes in need of volunteers like you</p>
-    </br>
-    <button type="button" class="btn btn-primary center-block" data-ui-sref="storyIndex" href="#">See All Stories</a></button>
+  <div class="dc-image-container">
+    <h1>You Care About Your City</h1>
+    <h2>Search for causes in need of volunteers like you</h2>
   </div>
+<main data-ng-controller="event_index_controller as vm">
+<table class="table">
+<table class="table table-bordered">
+
+  <thead>
+    <tr>
+      <input type="text" class="form-control" placeholder="Search Events" data-ng-model="vm.filter_on" />
+      <td data-ng-click="vm.is_descending = !(vm.is_descending)">
+        <span data-ng-if="vm.is_descending">a-z</span>
+        <span data-ng-if="vm.is_descending">z-a</span>
+      </td>
+      <th data-ng-click="vm.sort_data_by('event.title')">Event Name</th>
+      <th data-ng-click="vm.sort_data_by('event.organizer')">Organizer</th>
+      <th data-ng-click="vm.sort_data_by('event.focus_area')">Category</th>
+      <th data-ng-click="vm.sort_data_by('event.start_date')">Start Date</th>
+      <th data-ng-click="vm.sort_data_by('event.end_date')">End Date</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
+      <td></td>
+        <td>{{event.title}}</td>
+        <td>{{event.organizer}}</td>
+        <td>{{event.focus_area}}</td>
+        <td>{{event.start_date}}</td>
+        <td>{{event.end_date}}</td>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+</main>
+</table>
 </section>

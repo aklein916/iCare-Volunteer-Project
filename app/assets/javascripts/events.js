@@ -13,6 +13,10 @@
     "$stateProvider",
     RouterFunction
   ])
+  // .factory("HomeFactory", [
+  //   "$resource",
+  //   HomeFactoryFunction
+  // ])
   .factory("EventFactory", [
     "$resource",
     EventFactoryFunction
@@ -26,6 +30,10 @@
     "$state",
     StoryFormDirectiveFunction
   ])
+  // .controller("home_controller", [
+  //   "HomeFactory",
+  //   HomeControllerFunction
+  // ])
   .controller("event_index_controller", [
     "EventFactory",
     EventIndexControllerFunction
@@ -50,14 +58,20 @@
 
   function RouterFunction($stateProvider){
     $stateProvider
-    .state("eventIndex", {
+    .state("home", {
       url: "",
+      templateUrl: "ng-view/home.html",
+      controller: "home_controller",
+      controllerAs: "HomeVM"
+    })
+    .state("eventIndex", {
+      url: "/events",
       templateUrl: "ng-view/event.index.html",
       controller: "event_index_controller",
       controllerAs: "EventIndexVM"
     })
     .state("eventShow",{
-      url: "/events",
+      url: "/events/:id",
       templateUrl: "ng-view/event.show.html",
       controller: "event_show_controller",
       controllerAs: "EventShowVM"
