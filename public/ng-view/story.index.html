@@ -17,8 +17,9 @@
         <p>Why I volunteer: {{story.volstory}}</p>
         </div>
       </main>
-    </body>
-    <footer class="foot">
-      <button type="button" class="btn btn-primary btn-block" data-ui-sref="storyForm">Tell Us What Inspires You</button>
-    </footer>
+
+      <div data-ng-switch="storyForm">
+        <button type="button" class="btn btn-primary center-block" data-ui-sref="storyForm">Tell Us What Inspires You!</button>
+      </div>
+      <div class="space"></div>
   </section>
