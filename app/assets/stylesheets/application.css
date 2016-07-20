@@ -63,6 +63,10 @@
       text-decoration: none;
       background-color: transparent;
   }
+  .space{
+    /*margin-bottom: 200px;*/
+    height:50px;
+  }
 
   #home {
     background-image: url(//i.imgur.com/ENvDzQX.jpg);
@@ -173,6 +177,11 @@
 
   #eventindex table {
     /*border-color: black;*/
+  }
+
+
+  #eventshow body{
+    color: gray;
   }
 
   #storyindex .container {

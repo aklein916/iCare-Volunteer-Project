@@ -1,0 +1,35 @@
+<div class="container" data-ng-app="icare">
+  <div class="space"></div>
+  <!-- <header class="page-header"> -->
+    <h1>Event Details</h1>
+  <main data-ui-view>
+</div>
+
+<div class="container">
+  <h2><%= @event.title %></h2>
+  <% if @event.organizer.present? %>
+  <p><b>Event Organizer:</b><%= @event.organizer %></p>
+  <% end %>
+  <% if @event.focus_area.present? %>
+  <p><b>Area of interest:</b><%= @event.focus_area %></p>
+  <% end %>
+  <% if @event.description.present? %>
+  <p><b>Event Description:</b><%= @event.description %></p>
+  <% end %>
+  <% if @event.start_date.present? %>
+  <p><b>Start Date:</b><%= @event.start_date %></p>
+  <% end %>
+  <% if @event.end_date.present? %>
+  <p><b>End Date:</b><%= @event.end_date %></p>
+  <% end %>
+  <% if @event.start_time.present? %>
+  <p><b>Start Time:</b><%= @event.start_time %></p>
+  <% end %>
+  <% if @event.end_time.present? %>
+  <p><b>End Time:</b><%= @event.end_time %></p>
+  <% end %>
+  <% if @event.address.present? %>
+  <p><b>Address:</b><%= @event.address %></p>
+  <% end %>
+</div>
+  </main>

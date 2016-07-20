@@ -1,7 +1,11 @@
 <section id="eventshow">
-    <main data-ui-view></main>
+<div class="container">
+  <h1>You Care About Your City</h1>
+  <h2>Search for causes in need of volunteers like you</h2>
+
+  <p>hi</p>
   <main data-ng-controller="event_show_controller as vm">
-    <div data-ng-repeat="event in vm.events | filter:search">
+
       <h2>{{EventShowVM.event.title}}</h2>
       <p>{{EventShowVM.event.title}}</p>
       <p>{{EventShowVM.event.organizer}}</p>
@@ -14,4 +18,5 @@
       <p>{{EventShowVM.event.address}}</p>
     </div>
   </main>
+    </div>
 </section>
