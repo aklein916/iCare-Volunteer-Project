@@ -101,7 +101,8 @@
     var vm = this;
     var event =
      $resource("/events/:id.json", {}, {
-      UPDATE: {method: "PUT"}
+      UPDATE: {method: "PUT"},
+      SHOW: {method: "GET"}
     });
     vm.data = event.query();
     vm.sort_data_by = function(title){
@@ -114,15 +115,15 @@
     var EventIndexVM = this;
     this.events = EventFactory.query();
     this.newEvent = new EventFactory();
-    this.url = "";
-    this.changeUrl = function(event){
-      $state.go("eventShow")
-    }
+    // this.url = "";
+    // this.changeUrl = function(event){
+    //   $state.go("eventShow")
+    // }
   }
   function EventShowControllerFunction(EventFactory, $stateParams){
     var EventShowVM = this;
-    // this.event = event.get($stateParams);
-    this.event = EventFactory.get[{id: $stateParams.id}]
+    EventShowVM.event = EventFactory.get({id:$stateParams.id});
+      // this.event = EventShowVM.get($stateParams);
   };
 
   function StoryFactoryFunction($resource){

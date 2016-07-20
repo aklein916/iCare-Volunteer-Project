@@ -26,7 +26,8 @@
   <tbody>
     <tr data-ng-repeat="event in vm.events | filter: vm.filter_on | orderBy: vm.sort_on : vm.is_descending">
       <td></td>
-        <td><button><a href="events/{{event.id}}">View Event Details</a></button></td>
+        <td><button><a data-ui-sref=
+          "eventShow{{id:event.id}}">View Event Details</a></button></td>
         <td>{{event.title}}</td>
         <td>{{event.organizer}}</td>
         <td>{{event.focus_area}}</td>

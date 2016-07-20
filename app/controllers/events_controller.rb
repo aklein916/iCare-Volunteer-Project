@@ -10,7 +10,11 @@ class EventsController < ApplicationController
 
   def show
     @event = Event.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json{ render status: 200, json: @events }
   end
+end
 
 
   private
