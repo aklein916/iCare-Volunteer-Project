@@ -121,7 +121,8 @@
   }
   function EventShowControllerFunction(EventFactory, $stateParams){
     var EventShowVM = this;
-    EventShowVM.event = EventFactory.get[{id: $stateParams.id}]
+    // this.event = event.get($stateParams);
+    this.event = EventFactory.get[{id: $stateParams.id}]
   };
 
   function StoryFactoryFunction($resource){
